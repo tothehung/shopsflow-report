@@ -25,6 +25,8 @@ pre: " <b> 4.1. </b> "
 - **Nhu Tran** – *Account Manager, AWS Vietnam* (Interactive Sharing & Discussion Session).
 - **Khang Nguyen** – *Solution Architect, Cloud Kinetics* (Swinburne Vietnam Alumni - Batch K3).
 
+![Enterprise Cloud Architectures & Industry Application Event Overview](/images/4-EventParticipated/4.1-Event1/event1-1.jpg)
+
 ---
 
 ### Event Highlights
@@ -111,6 +113,8 @@ Attending the Study Tour event **“AWS: Enterprise Cloud Architectures and Indu
 - **Resilience:** Maintain a growth mindset, embrace failure as learning, and stay committed to long-term goals.
 - **Balancing Technical & Business Skills:** Combining deep technical expertise with domain business understanding is the key to creating extraordinary value.
 - **Lifelong Learning:** Technology tools will constantly change, but foundational architectural thinking and continuous learning remain timeless core assets.
+
+![Enterprise Cloud Architectures Event Reflections](/images/4-EventParticipated/4.1-Event1/event1-2.jpg)
 
 ---
 

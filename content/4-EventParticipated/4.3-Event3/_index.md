@@ -27,6 +27,8 @@ pre: " <b> 4.3. </b> "
 - **Team 3K (FPT Students):** Solution: *Shepherd (Small Human Fluctuation Federation Response)* – Real-time crowd tracking and autonomous dispatcher combining YOLOv8/Fargate with AWS Kinesis Video Streams & Bedrock.
 - **Team Six Pillars:** Solution: *Adaptive Workflow Engine for Anti-Money Laundering (AML)* – Multi-Agent detection, investigation, and compliance engine for banking and financial trading platforms.
 
+![Agentic AI Build Week Event Presentation](/images/4-EventParticipated/4.3-Event3/event3.jpg)
+
 ---
 
 ### Event Highlights

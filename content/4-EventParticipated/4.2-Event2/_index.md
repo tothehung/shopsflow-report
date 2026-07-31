@@ -40,6 +40,10 @@ pre: " <b> 4.2. </b> "
   - *Pricing:* Pay-as-you-go at $50/Task-Hour (extremely cost-effective compared to traditional $10,000 pentest engagements).
   - *Limitations:* Vulnerable to complex authentication mechanisms (MFA, Biometrics, mTLS); struggles with nuanced business logic flaws.
 
+![Securing Your Web Apps With AWS Security Agent Presentation](/images/4-EventParticipated/4.2-Event2/event2-1.jpg)
+
+---
+
 #### 2. SLA and Monitoring: From SLA to Monitoring What Really Matters (Speaker: Nguyen Huynh Son)
 
 - **SLA Definition & Risk Management:**
@@ -55,6 +59,10 @@ pre: " <b> 4.2. </b> "
   - **Harsh Reality:** All infrastructure metrics reporting "Green" (CPU 18%, ALB Target 2/2, Healthcheck `/health` 200 OK) does not guarantee a good user experience. If database connectivity fails, `/login` returns errors while server monitoring stays green.
 - **Operational Advice:** *"Everything fails all the time, so plan for failure and nothing fails"* (Dr. Werner Vogels - CTO, Amazon). Enterprises are responsible for Customer Experience, not just server uptime.
 
+![SLA and Monitoring Presentation](/images/4-EventParticipated/4.2-Event2/event2-2.jpg)
+
+---
+
 #### 3. Inside The Exam: AWS Cloud Practitioner (Speaker: Ngo Le Tan Huy)
 
 - **AWS Certified Cloud Practitioner (CLF-C02) Exam Structure:**
@@ -68,6 +76,8 @@ pre: " <b> 4.2. </b> "
   - **Map Keyword Thinking:** Link service names directly to 1–2 core keywords (e.g., *"Decouple/Microservices"* -> SQS; *"Data monetization"* -> Business Perspective in CAF).
   - **Analyze Wrong Options:** Understand why option A is correct and B, C, D are incorrect to avoid exam traps.
   - **Test-Taking Tips:** Use the Process of Elimination to discard fake services; use *"Flag for review"* for uncertain questions; watch for key qualifiers (*NOT, Least cost, Most scalable*).
+
+![Inside The Exam AWS Cloud Practitioner Presentation](/images/4-EventParticipated/4.2-Event2/event2-3.jpg)
 
 ---
 
@@ -116,6 +126,8 @@ Attending the July 11 technical session provided invaluable practical insights, 
 - **Security-First & Automation:** Security must be embedded from initial design (Design Review) and code (Code Review) via automation.
 - **Responsibility for User Experience:** System health extends beyond keeping servers alive; business transactions must succeed end-to-end.
 - **Strategic Preparation:** Whether operating cloud systems or preparing for certification exams, understanding core fundamentals and executing strategically determines success.
+
+![AWS Technical Deep Dive Event Group Photo](/images/4-EventParticipated/4.2-Event2/event2-4.jpg)
 
 ---
 
