@@ -11,7 +11,9 @@ chapter: false
 
 &emsp; **Số điện thoại:** 0931466918
 
-&emsp; **Email:** tothehung2204@gmail.com
+&emsp; **Email 1:** tothehung2204@gmail.com
+
+&emsp; **Email 2:** hung.totothehung@hcmut.edu.vn
 
 &emsp; **Trường:** Đại học Bách Khoa - Đại học Quốc gia - TP.HCM
 
