@@ -30,6 +30,7 @@ npm run build
 ```
 
 After a successful build, the output will be in the `./dist/` directory:
+
 ```
 dist/
 ├── index.html
@@ -46,12 +47,12 @@ dist/
 
 1. Navigate to **AWS Console** → **S3** → **Create bucket**.
 
-| Field | Value |
-|---|---|
-| Bucket name | `shopsflow-frontend-<your-account-id>` |
-| AWS Region | `ap-southeast-1` |
-| Block all public access | ✅ **Enable** (CloudFront uses OAC — not direct public access) |
-| Bucket versioning | Disable |
+| Field                   | Value                                                       |
+| ----------------------- | ----------------------------------------------------------- |
+| Bucket name             | `shopsflow-frontend-<your-account-id>`                      |
+| AWS Region              | `ap-southeast-1`                                            |
+| Block all public access | **Enable** (CloudFront uses OAC — not direct public access) |
+| Bucket versioning       | Disable                                                     |
 
 2. Click **Create bucket**.
 
@@ -64,6 +65,7 @@ dist/
 ### 3. Upload Build Files to S3
 
 Using the AWS CLI:
+
 ```bash
 # Sync the dist/ folder to the S3 bucket
 aws s3 sync ./dist s3://shopsflow-frontend-<your-account-id>/ \
@@ -75,10 +77,11 @@ aws s3 ls s3://shopsflow-frontend-<your-account-id>/ --human-readable
 ```
 
 Expected output:
+
 ```
 2026-06-15 10:00:00    1.2 KiB index.html
 2026-06-15 10:00:00    356.7 KiB assets/index-xxxxxxxx.js
 2026-06-15 10:00:00     24.1 KiB assets/index-xxxxxxxx.css
 ```
 
-✅ **All frontend assets are now stored in S3 and ready to be served through CloudFront.**
+**All frontend assets are now stored in S3 and ready to be served through CloudFront.**

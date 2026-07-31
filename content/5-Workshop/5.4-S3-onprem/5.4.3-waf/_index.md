@@ -13,6 +13,7 @@ In this step, you will create an **AWS WAF Web ACL** and attach it to the CloudF
 ### 1. Why WAF for Shopsflow?
 
 The Shopsflow storefront is a public-facing React application that exposes an API backend. Without WAF:
+
 - Attackers can probe the API for **SQL Injection** vulnerabilities in search and filter parameters.
 - Bots can **enumerate product IDs** or perform **credential stuffing** attacks on the login endpoint.
 - Malicious inputs can **bypass input validation** in the frontend.
@@ -32,11 +33,11 @@ AWS WAF for CloudFront must be created in the **US East (N. Virginia) `us-east-1
 
 #### General Settings
 
-| Field | Value |
-|---|---|
-| Name | `shopsflow-waf` |
+| Field         | Value                           |
+| ------------- | ------------------------------- |
+| Name          | `shopsflow-waf`                 |
 | Resource type | Amazon CloudFront distributions |
-| Region | Global (CloudFront) |
+| Region        | Global (CloudFront)             |
 
 ---
 
@@ -45,16 +46,19 @@ AWS WAF for CloudFront must be created in the **US East (N. Virginia) `us-east-1
 Click **Add rules** → **Add managed rule groups** → Enable the following three rule groups:
 
 #### Rule Group 1: Common Web Exploits
+
 - **Name:** `AWSManagedRulesCommonRuleSet`
 - **Purpose:** Blocks common web application vulnerabilities (XSS, path traversal, HTTP flooding)
 - **Action:** Block
 
 #### Rule Group 2: Known Bad Inputs
+
 - **Name:** `AWSManagedRulesKnownBadInputsRuleSet`
 - **Purpose:** Blocks requests that match patterns known to be exploits, such as Log4SHELL
 - **Action:** Block
 
 #### Rule Group 3: SQL Injection Protection
+
 - **Name:** `AWSManagedRulesSQLiRuleSet`
 - **Purpose:** Blocks SQL injection attacks in query strings, body, headers, and URI paths
 - **Action:** Block
@@ -73,8 +77,9 @@ Click **Add rules**.
 ### 5. Configure CloudWatch Metrics
 
 Under **Configure metrics**:
-* Web ACL metric name: `shopsflow-waf-metrics`
-* ✅ Enable sampled requests — allows you to see sample requests in the WAF console for debugging.
+
+- Web ACL metric name: `shopsflow-waf-metrics`
+- Enable sampled requests — allows you to see sample requests in the WAF console for debugging.
 
 Click **Next** → **Next** → **Create web ACL**.
 
@@ -96,6 +101,7 @@ It takes **1–2 minutes** for the WAF association to propagate globally across 
 ### 7. Test WAF Protection
 
 #### Test 1: SQL Injection Block
+
 ```bash
 # This request simulates a SQL injection in a query parameter
 curl -I "https://dxxxxx.cloudfront.net/api/products?search=1'+OR+'1'='1"
@@ -103,6 +109,7 @@ curl -I "https://dxxxxx.cloudfront.net/api/products?search=1'+OR+'1'='1"
 ```
 
 #### Test 2: XSS Block
+
 ```bash
 # This simulates a cross-site scripting payload
 curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
@@ -110,6 +117,7 @@ curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
 ```
 
 #### Test 3: Normal Request Passes
+
 ```bash
 # A normal product browse request should succeed
 curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
@@ -122,8 +130,8 @@ curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
 
 1. Navigate to **CloudWatch** → **Metrics** → **WAF** → `shopsflow-waf-metrics`.
 2. Monitor:
-   * `BlockedRequests` — number of requests blocked per rule
-   * `AllowedRequests` — total legitimate traffic
-   * `CountedRequests` — requests matched by count-only rules
+   - `BlockedRequests` — number of requests blocked per rule
+   - `AllowedRequests` — total legitimate traffic
+   - `CountedRequests` — requests matched by count-only rules
 
-✅ **The Shopsflow frontend is now protected by AWS WAF. All SQL injection, XSS, and known bad input patterns are automatically blocked at the CloudFront edge before reaching the ALB and backend.**
+**The Shopsflow frontend is now protected by AWS WAF. All SQL injection, XSS, and known bad input patterns are automatically blocked at the CloudFront edge before reaching the ALB and backend.**

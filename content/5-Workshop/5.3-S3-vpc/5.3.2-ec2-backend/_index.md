@@ -14,19 +14,19 @@ In this step, you will create the **Application Load Balancer (ALB)**, an **EC2 
 
 1. Navigate to **EC2** → **Target Groups** → **Create target group**.
 
-| Field | Value |
-|---|---|
-| Target type | Instances |
-| Target group name | `shopsflow-tg` |
-| Protocol | HTTP |
-| Port | `8080` |
-| VPC | `shopsflow-vpc` |
-| Health check protocol | HTTP |
-| Health check path | `/actuator/health` |
-| Healthy threshold | `2` |
-| Unhealthy threshold | `3` |
-| Timeout | `5 seconds` |
-| Interval | `30 seconds` |
+| Field                 | Value              |
+| --------------------- | ------------------ |
+| Target type           | Instances          |
+| Target group name     | `shopsflow-tg`     |
+| Protocol              | HTTP               |
+| Port                  | `8080`             |
+| VPC                   | `shopsflow-vpc`    |
+| Health check protocol | HTTP               |
+| Health check path     | `/actuator/health` |
+| Healthy threshold     | `2`                |
+| Unhealthy threshold   | `3`                |
+| Timeout               | `5 seconds`        |
+| Interval              | `30 seconds`       |
 
 2. Click **Next** → **Create target group** (no instances registered yet).
 
@@ -36,18 +36,18 @@ In this step, you will create the **Application Load Balancer (ALB)**, an **EC2 
 
 1. Navigate to **EC2** → **Load Balancers** → **Create load balancer** → **Application Load Balancer**.
 
-| Field | Value |
-|---|---|
-| Name | `shopsflow-alb` |
-| Scheme | Internet-facing |
-| IP address type | IPv4 |
-| VPC | `shopsflow-vpc` |
-| Subnets | `shopsflow-public-1` (AZ-a), `shopsflow-public-2` (AZ-b) |
-| Security groups | `shopsflow-alb-sg` |
+| Field           | Value                                                    |
+| --------------- | -------------------------------------------------------- |
+| Name            | `shopsflow-alb`                                          |
+| Scheme          | Internet-facing                                          |
+| IP address type | IPv4                                                     |
+| VPC             | `shopsflow-vpc`                                          |
+| Subnets         | `shopsflow-public-1` (AZ-a), `shopsflow-public-2` (AZ-b) |
+| Security groups | `shopsflow-alb-sg`                                       |
 
 2. Under **Listeners**:
-   * Add listener: Protocol `HTTP`, Port `80`
-   * Default action: Forward to `shopsflow-tg`
+   - Add listener: Protocol `HTTP`, Port `80`
+   - Default action: Forward to `shopsflow-tg`
 
 3. Click **Create load balancer**.
 
@@ -108,14 +108,14 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 1. Navigate to **EC2** → **Launch Templates** → **Create launch template**.
 
-| Field | Value |
-|---|---|
-| Name | `shopsflow-lt` |
-| AMI | Amazon Linux 2023 (latest) |
-| Instance type | `t3.small` |
-| Key pair | Your existing SSH key pair |
-| Security groups | `shopsflow-ec2-sg` |
-| IAM instance profile | `ShopsflowEC2Role` |
+| Field                | Value                      |
+| -------------------- | -------------------------- |
+| Name                 | `shopsflow-lt`             |
+| AMI                  | Amazon Linux 2023 (latest) |
+| Instance type        | `t3.small`                 |
+| Key pair             | Your existing SSH key pair |
+| Security groups      | `shopsflow-ec2-sg`         |
+| IAM instance profile | `ShopsflowEC2Role`         |
 
 2. Under **Advanced details** → **User data**: paste the script from Step 3.
 3. Click **Create launch template**.
@@ -126,26 +126,26 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 1. Navigate to **EC2** → **Auto Scaling Groups** → **Create Auto Scaling group**.
 
-| Field | Value |
-|---|---|
-| Name | `shopsflow-asg` |
-| Launch template | `shopsflow-lt` |
-| VPC | `shopsflow-vpc` |
-| Subnets | `shopsflow-private-app-1`, `shopsflow-private-app-2` |
+| Field           | Value                                                |
+| --------------- | ---------------------------------------------------- |
+| Name            | `shopsflow-asg`                                      |
+| Launch template | `shopsflow-lt`                                       |
+| VPC             | `shopsflow-vpc`                                      |
+| Subnets         | `shopsflow-private-app-1`, `shopsflow-private-app-2` |
 
 2. Under **Load balancing** → Attach to existing load balancer → Choose `shopsflow-tg`.
 3. Under **Health checks** → Turn on ELB health checks.
 4. Under **Group size**:
 
-| | Value |
-|---|---|
-| Desired capacity | `2` |
-| Minimum capacity | `1` |
-| Maximum capacity | `4` |
+|                  | Value |
+| ---------------- | ----- |
+| Desired capacity | `2`   |
+| Minimum capacity | `1`   |
+| Maximum capacity | `4`   |
 
 5. Under **Automatic scaling** → Add a **Target tracking scaling policy**:
-   * Metric: Average CPU utilization
-   * Target value: `60`
+   - Metric: Average CPU utilization
+   - Target value: `60`
 
 6. Click **Create Auto Scaling group**.
 
@@ -169,4 +169,4 @@ docker logs shopsflow-backend 2>&1 | grep -i flyway
 
 Navigate to **EC2** → **Target Groups** → `shopsflow-tg` → **Targets** tab and confirm all registered targets show status **Healthy**.
 
-✅ **The Spring Boot backend is now running in a highly available configuration across two Availability Zones, behind the Application Load Balancer.**
+**The Spring Boot backend is now running in a highly available configuration across two Availability Zones, behind the Application Load Balancer.**
