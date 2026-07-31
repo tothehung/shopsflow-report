@@ -16,7 +16,7 @@ Here are 4 advanced, lesser-known technical AWS challenges learned through real 
 
 ### 1. Cross-AZ Data Transfer: The Hidden In-Region Bandwidth Cost Shock
 
-Most engineers know Internet data egress costs money. However, many mistakenly assume: *"Data transfers strictly within the same AWS Region are completely free"*.
+Most engineers know Internet data egress costs money. However, many mistakenly assume: _"Data transfers strictly within the same AWS Region are completely free"_.
 
 - **The Hidden Reality:** AWS charges for data transfers between different Availability Zones (AZs) within the same Region. Typical pricing is $0.01/GB egress plus $0.01/GB ingress (totaling $0.02/GB per data roundtrip).
 - **Production Scenario:** You deploy an EKS cluster or EC2 microservices spread across AZ-a and AZ-b for High Availability. These microservices continuously exchange cross-AZ API requests or query a centralized Redis Cache / DB hosted in AZ-a.
@@ -31,7 +31,7 @@ This classic debugging scenario leaves DevOps engineers stuck for days because s
 
 - **The Root Cause:** By default, EC2 instances in the same VPC communicate using Jumbo Frames (MTU 9001 bytes). However, when connections cross inter-region VPC Peering, VPN tunnels, or Direct Connect, the maximum MTU drops to standard 1500 bytes.
 - **Unusual Symptom:** ICMP ping between VPCs works smoothly and SSH connects fine. But when applications transfer large files or long JSON payloads over that connection, the request hangs indefinitely until timeout.
-- **The Cause:** Over-sized packets (> 1500 bytes) require IP fragmentation, but intermediate routers cannot fragment and send back an ICMP Path MTU message. If Security Groups block ICMP protocol, these ICMP messages are discarded (causing a *Path MTU Discovery Black Hole*).
+- **The Cause:** Over-sized packets (> 1500 bytes) require IP fragmentation, but intermediate routers cannot fragment and send back an ICMP Path MTU message. If Security Groups block ICMP protocol, these ICMP messages are discarded (causing a _Path MTU Discovery Black Hole_).
 - **The Fix:** Always allow ICMP (Custom ICMP - IPv4: Type 3, Code 4 - Destination Unreachable) in Security Groups, or reduce EC2 network interface MTU to 1500 when relying on inter-VPC / VPN links.
 
 ---
@@ -63,4 +63,4 @@ CloudWatch Logs Insights provides convenient SQL-style log querying. However, it
 Cloud engineering isn't just stitching services together on architecture diagrams; it requires understanding underlying infrastructure behavior. Details like MTU packet sizes, partition splitting mechanics, or cross-AZ transfer fees are rarely covered in basic tutorials but dictate production stability and cost efficiency.
 
 📌 **Link to Facebook Community Post:**  
-*(Pending Facebook community approval...)*
+[https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230167921081501/?rdid=OWE359AjcB0vTUf2#](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230167921081501/?rdid=OWE359AjcB0vTUf2#)
