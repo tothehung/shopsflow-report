@@ -1,58 +1,33 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-07-06
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 06/07/2026
+- **Ngày hoàn thành:** 11/07/2026
 
 ### Mục tiêu tuần 6:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu lý thuyết Infrastructure as Code (IaC) với HCL Terraform, State Management & Remote Lock với S3/DynamoDB
+- Thực hành bài Lab AWS: Tự động hóa khởi tạo hạ tầng Cloud bằng bộ mã Terraform Modules tái sử dụng
+- Hoàn thiện các module Terraform (VPC, EC2, RDS, ALB) cho ứng dụng Shopsflow và thực thi `terraform plan` / `apply`
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Nghiên cứu lý thuyết Infrastructure as Code (IaC) với HashiCorp Terraform: Cú pháp HCL, Terraform State, State Locking với DynamoDB và Remote Backend trên S3. |
+| 3 | Thiết kế kiến trúc Terraform Modules tái sử dụng: Phân tách các module `vpc`, `ec2`, `rds_postgres`, `alb` và định nghĩa các tệp `variables.tf`, `outputs.tf`, `main.tf`. |
+| 4 | Thực hành bài Lab AWS (Infrastructure Automation with Terraform): Viết mã Terraform khởi tạo Custom VPC Multi-AZ, Subnets, Internet Gateway và NAT Gateway. |
+| 5 | Hoàn thiện mã nguồn Terraform Module khởi tạo máy chủ EC2 Linux, RDS PostgreSQL và Application Load Balancer (ALB) cho dự án Shopsflow. |
+| 6 | Tiến hành kiểm thử lệnh `terraform fmt`, `terraform validate`, chạy `terraform plan` & `apply` khởi tạo hạ tầng tự động và tổng hợp báo cáo tuần 6. |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hoàn thành đúng tiến độ công việc tuần 6 (Terraform IaC Labs & Shopsflow Infrastructure Automation).
+* Tự động hóa 100% quy trình tạo môi trường Cloud cho ứng dụng Shopsflow bằng mã nguồn Terraform.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [HashiCorp Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform Backend S3 & DynamoDB State Locking Guide](https://developer.hashicorp.com/terraform/language/settings/backends/s3)
+- [Terraform Modules Best Practices](https://developer.hashicorp.com/terraform/language/modules)

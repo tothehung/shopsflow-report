@@ -1,57 +1,33 @@
 ---
-title: "Week 5 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 5"
+date: 2026-06-29
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+- **Start Date:** June 29, 2026
+- **Completion Date:** July 04, 2026
 
-### Week 5 Objectives:
+### Objectives for Week 5:
+- Theoretical research on RDS PostgreSQL relational database (Multi-AZ, Read Replicas) & Amazon ElastiCache Redis Caching
+- Study automated database schema migration version control using Flyway Migration tools
+- Kick off Shopsflow E-Commerce project: Provision RDS PostgreSQL in Private Subnets, configure Redis cluster, and execute Flyway SQL Migration scripts
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to implement this week:
+| Day | Task |
+| --- | --- |
+| 2 | Study Amazon RDS PostgreSQL theory: Multi-AZ deployment for high availability, DB Subnet Groups, Parameter Groups, Automated Backups, and Read Replicas. |
+| 3 | Research Amazon ElastiCache for Redis caching: In-Memory data structures, Redis Clusters, eviction policies, and Flyway SQL Migration version control mechanisms. |
+| 4 | Hands-on AWS Lab (RDS PostgreSQL & Redis Setup): Create DB Subnet Groups, provision RDS PostgreSQL 16 in Private DB Subnets, and initialize ElastiCache Redis Cluster. |
+| 5 | Integrate Spring Data JPA & Redis Caching into Shopsflow Spring Boot backend; draft Flyway migration SQL scripts (`V1__init_schema.sql`, `V2__seed_demo_data.sql`). |
+| 6 | Execute Flyway migrations auto-creating tables (Users, Categories, Products, Orders, Reviews), verify DB connectivity, and update Week 5 progress report. |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Results achieved in Week 5:
+* Completed Week 5 tasks on schedule (RDS, Redis Labs & Shopsflow Database Setup).
+* Successfully initialized RDS PostgreSQL relational database and Redis caching for Shopsflow.
 
-
-### Week 5 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### References & Study Materials:
+- [Amazon RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+- [Amazon ElastiCache for Redis Guide](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/)
+- [Flyway Database Migration Tool Documentation](https://documentation.red-gate.com/flyway)

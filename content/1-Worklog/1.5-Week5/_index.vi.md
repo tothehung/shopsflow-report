@@ -1,59 +1,33 @@
 ---
 title: "Worklog Tuần 5"
-date: 2024-01-01
-weight: 1
+date: 2026-06-29
+weight: 5
 chapter: false
 pre: " <b> 1.5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 29/06/2026
+- **Ngày hoàn thành:** 04/07/2026
 
 ### Mục tiêu tuần 5:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu lý thuyết CSDL quan hệ Amazon RDS PostgreSQL (Multi-AZ, Read Replicas) & Caching Amazon ElastiCache Redis
+- Tìm hiểu cơ chế quản lý phiên bản sơ đồ CSDL tự động bằng công cụ Flyway Database Migration
+- Khởi chạy dự án Shopsflow E-Commerce: Thiết lập RDS PostgreSQL trong Private Subnets, cấu hình Redis Caching và chạy Flyway SQL Migration scripts
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Tìm hiểu lý thuyết Amazon RDS PostgreSQL: Cấu hình Multi-AZ cho tính sẵn sàng cao, DB Subnet Groups, Parameter Groups, Automated Backups và Read Replicas. |
+| 3 | Nghiên cứu giải pháp đệm dữ liệu Amazon ElastiCache cho Redis: Cấu trúc In-Memory Caching, Redis Clusters, eviction policies và cơ chế quản lý phiên bản CSDL Flyway SQL Migration. |
+| 4 | Thực hành bài Lab AWS (RDS PostgreSQL & Redis Setup): Tạo DB Subnet Group, khởi tạo RDS PostgreSQL 16 trong Private DB Subnets và tạo ElastiCache Redis Cluster. |
+| 5 | Tích hợp Spring Data JPA & Redis Caching vào backend Spring Boot dự án Shopsflow; soạn các tệp Flyway migration SQL (`V1__init_schema.sql`, `V2__seed_demo_data.sql`). |
+| 6 | Thực thi Flyway migration tự động tạo bảng (Users, Categories, Products, Orders, Reviews), kiểm thử kết nối CSDL và tổng hợp báo cáo thu hoạch tuần 5. |
 
 ### Kết quả đạt được tuần 5:
+* Hoàn thành đúng tiến độ công việc tuần 5 (RDS, Redis Labs & Shopsflow Database Setup).
+* Khởi tạo thành công cơ sở dữ liệu quan hệ RDS PostgreSQL và đệm Redis cho ứng dụng Shopsflow.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [Amazon RDS PostgreSQL User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html)
+- [Amazon ElastiCache for Redis Guide](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/)
+- [Flyway Database Migration Tool Documentation](https://documentation.red-gate.com/flyway)

@@ -1,126 +1,122 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-11
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: "AWS Technical Deep Dive & Certification Roadmap (July 11)"
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- **AI/Agent Integration in Security:** Introduce AWS Security Agent (Frontier Agent) powered by Amazon Bedrock to automate the full web application security lifecycle (Design, Code, Pentest).
+- **Standardizing Operations & Observability Mindset:** Shift operational focus from traditional infrastructure monitoring (SLA / Infrastructure metrics) to user-centric observability (User Experience & Business metrics).
+- **AWS Certification Strategy:** Provide a strategic preparation roadmap for the AWS Certified Cloud Practitioner (CLF-C02) exam, including real-world test-taking techniques and interview strategies.
 
-### Speakers
+---
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+### Keynote Speakers
 
-### Key Highlights
+- **Thinh Nguyen** – *DevOps/DevSecOps/Cloud Engineer, Styl Solutions* (First Cloud AI Journey Member).
+- **Nguyen Huynh Son** – *Infrastructure Support Engineer, Endava* (Ex-Infrastructure Reliability Engineer at SPS, AWS Student Builder Group HUFLIT Member).
+- **Ngo Le Tan Huy** – *Presenter / Cloud Engineering Enthusiast*.
 
-#### Identifying the drawbacks of legacy application architecture
+---
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+### Event Highlights
 
-#### Transitioning to modern application architecture – Microservices
+#### 1. Securing Your Web Apps With AWS Security Agent (Speaker: Thinh Nguyen)
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+- **The Traditional Security Bottleneck:**
+  - Manual penetration testing is time-consuming (takes weeks), costly ($5,000 – $20,000 per assessment), and highly dependent on individual engineer skill/fatigue.
+- **AWS Security Agent (Frontier Agent):**
+  - **Autonomous Reasoning:** Leverages Amazon Bedrock to autonomously plan and execute security tasks without human intervention.
+  - **Full Security Lifecycle Automation:**
+    1. *Design Security Review:* Evaluates Markdown design docs or Terraform IaC code against Managed Packs (PCI DSS, NIST CSF, AWS Well-Architected). Free tier: 200 reviews/month.
+    2. *Code Security Review:* Integrates directly into GitHub/GitLab Pull Requests, automatically commenting on vulnerabilities and proposing code fixes (Auto-PR Fixes). Free tier: 1,000 PR reviews/month.
+    3. *Automated Pentesting:* Executes multi-step exploit chains (e.g., IDOR -> XSS), authenticates as a real user, and generates Verifiable Findings with proof-of-exploit reports.
+- **Costs & Practical Limitations:**
+  - *Pricing:* Pay-as-you-go at $50/Task-Hour (extremely cost-effective compared to traditional $10,000 pentest engagements).
+  - *Limitations:* Vulnerable to complex authentication mechanisms (MFA, Biometrics, mTLS); struggles with nuanced business logic flaws.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### 2. SLA and Monitoring: From SLA to Monitoring What Really Matters (Speaker: Nguyen Huynh Son)
 
-#### Domain-Driven Design (DDD)
+- **SLA Definition & Risk Management:**
+  - SLA (Service Level Agreement) is a formal commitment defining service availability between provider and client.
+  - Monitoring is a core component of risk management: *Identify risk -> Monitor signals -> Respond -> Improve*.
+- **The Gap Between "Healthy Infrastructure" and "Happy Users":**
+  - **The Monitoring Pyramid:**
+    1. *Customer Experience:* Can the user log in and complete checkout? (Top priority)
+    2. *Business Metrics:* Login success rate, order count, revenue.
+    3. *Application Metrics:* Latency, Error rate, Request throughput.
+    4. *Infrastructure Metrics:* CPU, Memory, Disk, Network.
+    5. *Cloud Provider:* EC2, RDS, ALB, S3.
+  - **Harsh Reality:** All infrastructure metrics reporting "Green" (CPU 18%, ALB Target 2/2, Healthcheck `/health` 200 OK) does not guarantee a good user experience. If database connectivity fails, `/login` returns errors while server monitoring stays green.
+- **Operational Advice:** *"Everything fails all the time, so plan for failure and nothing fails"* (Dr. Werner Vogels - CTO, Amazon). Enterprises are responsible for Customer Experience, not just server uptime.
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+#### 3. Inside The Exam: AWS Cloud Practitioner (Speaker: Ngo Le Tan Huy)
 
-#### Event-Driven Architecture
+- **AWS Certified Cloud Practitioner (CLF-C02) Exam Structure:**
+  - 65 multiple-choice/multiple-response questions, 90-minute duration (+30 mins for non-native English speakers via Accommodation request), passing score $\ge 700/1000$.
+  - **Weight Distribution Across 4 Domains:**
+    1. *Domain 1: Cloud Concepts (24%)* – Digital transformation, 6 Cloud benefits, AWS WAF, AWS CAF.
+    2. *Domain 2: Security and Compliance (30%)* – Shared Responsibility Model, IAM (Least Privilege), Security Groups vs NACLs, AWS Shield/WAF, AWS Artifact.
+    3. *Domain 3: Cloud Technology and Services (34%)* – Core concepts & use cases for Compute, Storage, Database, Networking.
+    4. *Domain 4: Billing, Pricing, and Support (12%)* – EC2 pricing models, AWS Cost Explorer, AWS Budgets, Support Plans.
+- **Effective Exam Preparation & Strategies:**
+  - **Map Keyword Thinking:** Link service names directly to 1–2 core keywords (e.g., *"Decouple/Microservices"* -> SQS; *"Data monetization"* -> Business Perspective in CAF).
+  - **Analyze Wrong Options:** Understand why option A is correct and B, C, D are incorrect to avoid exam traps.
+  - **Test-Taking Tips:** Use the Process of Elimination to discard fake services; use *"Flag for review"* for uncertain questions; watch for key qualifiers (*NOT, Least cost, Most scalable*).
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
+---
 
 ### Key Takeaways
 
-#### Design Mindset
+#### DevSecOps & AI Mindset
 
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
+- **Shift to Automated Pentesting:** Harness Generative AI Agents for continuous security testing within CI/CD pipelines instead of relying solely on annual manual audits.
+- **Verifiable Proof:** Evaluate security risks based on verified exploitation proofs rather than raw alerts from static analysis tools (SAST/DAST).
 
-#### Technical Architecture
+#### Observability Mindset
 
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
+- **User-Centric Monitoring:** Construct Dashboards and Metrics around actual user flows (Login, Checkout, Payment) rather than raw CPU/Memory metrics.
+- **Automated Incident Flow:** Establish end-to-end alerting: *Custom Metric -> CloudWatch Alarm -> SNS Topic -> Email/Slack* to resolve issues before users report them.
 
-#### Modernization Strategy
+#### Cloud Certification Strategy
 
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
+- **Learn via Use Cases & Keywords:** Focus on big-picture understanding and service purposes rather than memorizing syntax.
+- **Hands-On Practice:** Utilize the AWS Free Tier to gain practical experience with core services, solidifying theoretical concepts.
 
-### Applying to Work
+---
 
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
+### Application to Projects & Personal Development
 
-### Event Experience
+- **Implement DevSecOps in Workloads:**
+  - Integrate automated code scanning and Terraform IaC architecture checks into GitHub Actions / GitLab CI pipelines.
+- **Build Comprehensive Observability:**
+  - Configure Synthetic Monitoring and Custom Metrics tracking critical API success rates (login, checkout).
+  - Setup CloudWatch Alarms integrated with Amazon SNS for real-time notifications via Telegram/Slack when business flows break.
+- **AWS Certification Roadmap:**
+  - Complete the *Cloud Practitioner Essentials* course on AWS Skill Builder.
+  - Practice mock exams, apply elimination techniques, and analyze exam traps to confidently achieve CLF-C02 certification.
 
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
+---
 
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
+### Personal Reflections & Takeaways
 
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
+Attending the July 11 technical session provided invaluable practical insights, updated cutting-edge security technologies, and standardized cloud operations thinking.
 
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
+#### Speaker Insights
+- **Thinh Nguyen:** Expanded my perspective on deploying AI Agents for automated pentesting on AWS, recognizing both advantages and cost/technical boundaries.
+- **Nguyen Huynh Son:** Reshaped my view on Observability, reinforcing *"Healthy infrastructure $\neq$ Happy users"* and the necessity of user-experience monitoring.
+- **Ngo Le Tan Huy:** Provided a complete exam strategy, keyword mapping techniques, and confidence tips to conquer the AWS Certified Cloud Practitioner exam.
 
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
+#### Core Principles Learned
+- **Security-First & Automation:** Security must be embedded from initial design (Design Review) and code (Code Review) via automation.
+- **Responsibility for User Experience:** System health extends beyond keeping servers alive; business transactions must succeed end-to-end.
+- **Strategic Preparation:** Whether operating cloud systems or preparing for certification exams, understanding core fundamentals and executing strategically determines success.
 
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
+---
 
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> **Summary:** The event equipped me with both practical engineering mindsets (Security AI, Observability) and a personal career growth roadmap (AWS Certification), laying a solid foundation for my journey toward becoming a professional Cloud / DevSecOps Engineer.

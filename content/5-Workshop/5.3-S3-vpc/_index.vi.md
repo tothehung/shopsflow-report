@@ -1,18 +1,30 @@
 ---
-title : "Truy cập S3 từ VPC"
-date : 2024-01-01 
-weight : 3
-chapter : false
-pre : " <b> 5.3. </b> "
+title: "Triển khai Database & Backend API"
+date: 2026-06-15
+weight: 3
+chapter: false
+pre: " <b> 5.3. </b> "
 ---
 
-#### Sử dụng Gateway endpoint
+Phần này hướng dẫn khởi tạo **Amazon RDS PostgreSQL** làm cơ sở dữ liệu chính và triển khai **Spring Boot Backend API** lên **EC2 instances** bên trong Private Subnets, đặt sau **Application Load Balancer (ALB)**.
 
-Trong phần này, bạn sẽ tạo một Gateway endpoint để truy cập Amazon S3 từ một EC2 instance. Gateway endpoint sẽ cho phép tải một object lên S3 bucket mà không cần sử dụng Internet Công cộng. Để tạo endpoint, bạn phải chỉ định VPC mà bạn muốn tạo endpoint và dịch vụ (trong trường hợp này là S3) mà bạn muốn thiết lập kết nối.
+### Tổng quan kiến trúc
 
-![overview](/images/5-Workshop/5.3-S3-vpc/diagram2.png)
+```
+Internet
+    │
+    ▼
+[ALB - Public Subnets]  (shopsflow-alb-sg: cho phép :80 từ 0.0.0.0/0)
+    │
+    ▼
+[EC2 ASG - Private App Subnets]  (shopsflow-ec2-sg: cho phép :8080 từ ALB)
+    │  └── Spring Boot API (Docker) ← Secrets Manager (DB creds, JWT, VNPay)
+    ▼
+[RDS PostgreSQL - Private DB Subnets]  (shopsflow-rds-sg: cho phép :5432 từ EC2)
+    Multi-AZ: Primary (AZ-a) + Standby (AZ-b)
+```
 
 #### Nội dung
 
-- [Tạo gateway endpoint](3.1-create-gwe/)
-- [Test gateway endpoint](3.2-test-gwe/)
+1. [Khởi tạo RDS PostgreSQL](5.3.1-rds-database/)
+2. [Triển khai Spring Boot Backend API](5.3.2-ec2-backend/)

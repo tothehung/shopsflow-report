@@ -1,20 +1,38 @@
 ---
-title : "Truy cập S3 từ môi trường truyền thống"
-date : 2024-01-01 
-weight : 4 
-chapter : false
-pre : " <b> 5.4. </b> "
+title: "Triển khai Frontend (S3 + CloudFront + WAF)"
+date: 2026-06-15
+weight: 4
+chapter: false
+pre: " <b> 5.4. </b> "
 ---
 
-#### Tổng quan
+Phần này hướng dẫn build và deploy **React + Vite** Frontend lên **Amazon S3** để lưu trữ tĩnh, phân phối toàn cầu qua **Amazon CloudFront CDN**, và bảo vệ bằng **AWS WAF**.
 
-+ Trong phần này, bạn sẽ tạo một Interface Endpoint để truy cập Amazon S3 từ môi trường truyền thống mô phỏng. Interface Endpoint sẽ cho phép bạn định tuyến đến Amazon S3 qua kết nối VPN từ môi trường truyền thống mô phỏng của bạn.
+### Tổng quan kiến trúc
 
-+ Tại sao nên sử dụng **Interface Endpoint**:
-    + Các Gateway endpoints chỉ hoạt động với các tài nguyên đang chạy trong VPC nơi chúng được tạo. Interface Endpoint  hoạt động với tài nguyên chạy trong VPC và cả tài nguyên chạy trong môi trường truyền thống. Khả năng kết nối từ môi trường truyền thống của bạn với aws cloud có thể được cung cấp bởi AWS Site-to-Site VPN hoặc AWS Direct Connect.
-    + Interface Endpoint cho phép bạn kết nối với các dịch vụ do AWS PrivateLink cung cấp. Các dịch vụ này bao gồm một số dịch vụ AWS, dịch vụ do các đối tác và khách hàng AWS lưu trữ trong VPC của riêng họ (gọi tắt là Dịch vụ PrivateLink endpoints) và các dịch vụ Đối tác AWS Marketplace. Đối với workshop này, chúng ta sẽ tập trung vào việc kết nối với Amazon S3.
-    
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+```
+Trình duyệt
+    │  HTTPS
+    ▼
+[AWS WAF]  ──── Chặn: SQLi, XSS, Bad Inputs
+    │
+    ▼
+[CloudFront CDN]  ──── Global edge locations  ──── Chỉ HTTPS
+    │  Origin Access Control (OAC)
+    ▼
+[S3 Bucket]  ──── Private (không có public access)
+    shopsflow-frontend-<account-id>/
+    ├── index.html
+    └── assets/ (JS, CSS bundles)
+```
 
+**Các quyết định thiết kế quan trọng:**
+- S3 bucket **không có public access** — CloudFront đọc qua OAC signed requests.
+- **SPA error pages**: 403/404 → `index.html` với HTTP 200 để hỗ trợ React Router.
+- **WAF** được gắn ở cấp CloudFront, kiểm tra mọi request tại edge.
 
+#### Nội dung
 
+1. [Build & Upload Frontend lên S3](5.4.1-s3-frontend/)
+2. [Tạo CloudFront Distribution](5.4.2-cloudfront/)
+3. [Bảo vệ bằng AWS WAF](5.4.3-waf/)

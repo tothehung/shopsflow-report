@@ -1,44 +1,48 @@
 ---
 title: "Chia sẻ, đóng góp ý kiến"
-date: 2024-01-01
+date: 2026-06-01
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+> Dưới đây là những chia sẻ, cảm nhận và đóng góp ý kiến cá nhân của tôi sau khi hoàn thành kỳ thực tập 9 tuần trong chương trình **First Cloud AI Journey (FCAJ)**:
+
+---
 
 ### Đánh giá chung
 
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+**1. Môi trường học tập & làm việc**  
+Môi trường tại FCAJ rất hiện đại, cởi mở và giàu tính sáng tạo. Các thành viên trong cộng đồng và BTC luôn sẵn sàng hỗ trợ, chia sẻ tài liệu hữu ích và giải đáp thắc mắc kỹ thuật nhanh chóng. Hệ thống tài liệu mẫu Workshop và Worklog được tổ chức rất chuyên nghiệp.
 
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+**2. Sự hỗ trợ của Mentor / Admin Team**  
+Mentor hướng dẫn rất tận tâm và giàu kinh nghiệm thực chiến. Thay vì chỉ đưa ra đáp án trực tiếp khi gặp bug, Mentor luôn gợi ý phương pháp tư duy root-cause analysis và định hướng để thực tập sinh tự nghiên cứu, làm chủ giải pháp. Team Admin luôn hỗ trợ chu đáo các thủ tục hành chính và tài liệu cần thiết.
 
 **3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Công việc vừa giúp củng cố nền tảng vừa nâng cao đáng kể tư duy hạ tầng đám mây.
 
 **4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Trong 9 tuần thực tập, tôi đã phát triển vượt bậc kỹ năng thiết kế kiến trúc hạ tầng AWS, kỹ năng đóng gói container Docker, kỹ năng viết bài blog chia sẻ kinh nghiệm kỹ thuật và tư duy tối ưu hóa chi phí trên môi trường Production, mạnh dạn giao tiếp hơn.
 
 **5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Văn hóa FCAJ đề cao sự chia sẻ và cùng nhau tiến bộ. Mọi người tôn trọng lẫn nhau, tích cực trao đổi kinh nghiệm thực tế và luôn sẵn sàng hỗ trợ khi các thành viên khác gặp khó khăn trong quá trình làm lab, project.
 
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+**6. Chính sách / Phúc lợi cho thực tập sinh**  
+Chương trình cung cấp tài khoản AWS Sandbox / Credits cho các bài thực hành lab, hỗ trợ tài liệu học tập chuẩn hãng và cấp chứng nhận hoàn thành thực tập chất lượng.
 
+---
 
-### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+### Trả lời các câu hỏi khảo sát
 
+* **Điều bạn hài lòng nhất trong thời gian thực tập?**  
+  Điều tôi hài lòng nhất là được tự tay thiết kế và triển khai thành công một dự án từ khâu lập trình ứng dụng đến khi vận hành hoàn chỉnh trên AWS Cloud theo chuẩn 3-Tier Architecture.
+* **Điều bạn nghĩ chương trình cần cải thiện cho các khóa tiếp theo?**  
+  Chương trình có thể bổ sung thêm một số buổi Office Hour trực tiếp hoặc Live Coding Q&A định kỳ hàng tuần để giúp các bạn sinh viên giải đáp nhanh hơn các sự cố hạ tầng phức tạp.
+* **Nếu giới thiệu cho bạn bè, bạn có khuyên họ tham gia thực tập tại FCJ không? Vì sao?**  
+  Chắc chắn 100% tôi sẽ khuyên bạn bè tham gia. Đây là chương trình thực tập Cloud & AI thực chiến nhất, giúp sinh viên lấp đầy khoảng trống giữa lý thuyết trường học và yêu cầu tuyển dụng thực tế của doanh nghiệp.
 
-### Đề xuất & mong muốn
-- Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+---
+
+### Đề xuất & Mong muốn phát triển
+* **Đề xuất cải thiện trải nghiệm**: Mở rộng thêm các chuyên đề thực hành về CI/CD Pipeline (GitHub Actions / AWS CodePipeline) và Kubernetes (EKS) trong các khóa tiếp theo.
+* **Mong muốn tương lai**: Mong muốn tiếp tục đồng hành cùng cộng đồng FCAJ.

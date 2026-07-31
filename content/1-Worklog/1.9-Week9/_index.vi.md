@@ -1,59 +1,35 @@
 ---
 title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+date: 2026-07-27
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 27/07/2026
+- **Ngày hoàn thành:** 01/08/2026
 
 ### Mục tiêu tuần 9:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu lý thuyết công nghệ tiên tiến Generative AI on AWS (Amazon Bedrock API) & Serverless Event-Driven Architecture (SQS/Lambda)
+- Thực hành bài Lab AWS: Tích hợp Generative AI Amazon Bedrock phân tích cảm xúc dữ liệu & Xử lý thông báo Serverless với AWS Lambda/SQS
+- Tiến hành kiểm thử End-to-End toàn diện ứng dụng Shopsflow, đánh giá Well-Architected Framework, tối ưu chi phí FinOps
+- **Soạn thảo và hoàn thiện toàn bộ Báo cáo thực tập tốt nghiệp Capstone Report**, thiết kế slide thuyết trình và bảo vệ xuất sắc báo cáo nghiệm thu
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Nghiên cứu lý thuyết Generative AI trên AWS, Amazon Bedrock API (Claude 3.5 Sonnet), Prompt Engineering, kiến trúc RAG Knowledge Base và kiến trúc Serverless Event-Driven (SQS, SNS, Lambda). |
+| 3 | Thực hành bài Lab AWS (Generative AI Amazon Bedrock & Serverless Messaging Lab): Gọi API Amazon Bedrock phân tích cảm xúc dữ liệu (Sentiment Analysis) và viết AWS Lambda function kết nối SQS Queue. |
+| 4 | Tiến hành kiểm thử End-to-End toàn bộ hệ thống Shopsflow (Đăng ký -> Đặt hàng -> Thanh toán VNPay Sandbox -> Admin duyệt đơn & Reviews), đánh giá kiến trúc theo 6 trụ cột AWS Well-Architected Tool và dọn dẹp tài nguyên dư thừa (FinOps). |
+| 5 | **Soạn thảo & hoàn thiện Báo cáo thực tập tốt nghiệp Capstone Report**: Tổng hợp toàn bộ nhật ký công việc 9 tuần, sơ đồ kiến trúc hạ tầng AWS, kết quả kiểm thử và bài học kinh nghiệm. |
+| 6 | Tổng duyệt Slide thuyết trình báo cáo thực tập, đóng gói toàn bộ mã nguồn dự án Shopsflow và tham gia bảo vệ xuất sắc báo cáo trước hội đồng nghiệm thu. |
 
 ### Kết quả đạt được tuần 9:
+* Hoàn thành đúng tiến độ công việc tuần 9 (Generative AI Research, AWS Labs, E2E Testing, Internship Report Writing & Final Defense).
+* Nắm vững lý thuyết Generative AI / Serverless trên AWS, kiểm thử vận hành thành công hệ thống Shopsflow E-Commerce, **hoàn thành xuất sắc Báo cáo thực tập tốt nghiệp** và bảo vệ thành công dự án Capstone 9 tuần.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/)
+- [AWS Well-Architected Tool & 6 Pillars Documentation](https://aws.amazon.com/architecture/well-architected/)
+- [AWS FinOps Cost Optimization Guide](https://aws.amazon.com/aws-cost-management/)
+- [End-to-End Integration Testing Patterns on AWS](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/)

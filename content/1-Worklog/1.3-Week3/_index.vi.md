@@ -1,59 +1,34 @@
 ---
 title: "Worklog Tuần 3"
-date: 2024-01-01
-weight: 1
+date: 2026-06-15
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 15/06/2026
+- **Ngày hoàn thành:** 20/06/2026
 
 ### Mục tiêu tuần 3:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu hạ tầng mạng ảo Custom VPC, địa chỉ IP CIDR, Public/Private Subnets và Internet Gateway
+- Tìm hiểu cơ chế tường lửa Stateful Security Groups vs Stateless Network ACLs (NACLs) & VPC Flow Logs
+- Thực hành xây dựng Custom VPC Multi-AZ, triển khai NAT Gateway cho Private Subnet và Bastion Host kết nối SSH an toàn
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Tìm hiểu lý thuyết Amazon VPC: Quy hoạch dải IP CIDR Block (`10.0.0.0/16`), khái niệm Public Subnet, Private Subnet, Route Tables và Internet Gateway (IGW). |
+| 3 | Nghiên cứu cơ chế kiểm soát an ninh mạng: Stateful Security Groups (tường lửa cấp máy chủ EC2) vs Stateless Network ACLs (tường lửa cấp Subnet) và quy tắc Inbound/Outbound. |
+| 4 | Thực hành bài Lab AWS (Custom VPC Multi-AZ Architecture): Khởi tạo Custom VPC, chia 2 Public Subnets & 2 Private Subnets nằm trên 2 Availability Zones khác nhau. |
+| 5 | Thực hành bài Lab AWS (NAT Gateway & Bastion Host): Khởi tạo Elastic IP (EIP), cấu hình NAT Gateway hỗ trợ Private Subnets kết nối Internet và dựng SSH Bastion Host. |
+| 6 | Kích hoạt VPC Flow Logs đẩy nhật ký mạng về CloudWatch Log Groups, kiểm thử truy cập an toàn SSH và tổng hợp báo cáo thu hoạch tuần 3. |
 
 ### Kết quả đạt được tuần 3:
+* Hoàn thành đúng tiến độ công việc tuần 3 (Networking & Custom VPC Architecture Labs).
+* Tự tay thiết kế và khởi tạo thành công hạ tầng mạng ảo VPC Multi-AZ an toàn theo tiêu chuẩn AWS.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
+- [AWS Security Groups & Network ACLs Guide](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html)
+- [AWS NAT Gateway Setup & Administration](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+- [AWS VPC Flow Logs Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)

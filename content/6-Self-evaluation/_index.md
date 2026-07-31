@@ -1,39 +1,35 @@
 ---
 title: "Self-Assessment"
-date: 2024-01-01
+date: 2026-06-01
 weight: 6
 chapter: false
 pre: " <b> 6. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
+During my 9-week internship program at **First Cloud Journey (FCJ)** from **June 01, 2026** to **August 01, 2026**, I had the opportunity to learn, practice Cloud & DevOps engineering skills, and directly apply theoretical knowledge to the real-world project **Shopsflow — Full-Stack E-Commerce Application on AWS**.
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+I participated in in-depth AWS service research (EC2, RDS PostgreSQL, ElastiCache Redis, CloudWatch, Secrets Manager, Bedrock API), containerizing React 19 / Spring Boot 21 services using Docker Compose, integrating the VNPay Sandbox payment gateway, executing infrastructure automation, and drafting the entire internship report.
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+To objectively evaluate my performance throughout the 9-week internship, I have assessed myself based on the following criteria:
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+| No. | Criteria | Description | Good | Fair | Average |
+| --- | --- | --- | --- | --- | --- |
+| 1 | **Professional Knowledge & Skills** | Industry understanding, applying knowledge in practice, tool proficiency, work quality | ✅ | ☐ | ☐ |
+| 2 | **Ability to Learn** | Absorbing new knowledge, learning quickly | ✅ | ☐ | ☐ |
+| 3 | **Proactiveness** | Independent research, taking initiative without waiting for instructions | ✅ | ☐ | ☐ |
+| 4 | **Sense of Responsibility** | Completing work on time, ensuring quality | ✅ | ☐ | ☐ |
+| 5 | **Discipline** | Complying with work processes, report submission schedules, and FCJ program rules | ✅ | ☐ | ☐ |
+| 6 | **Progressive Mindset** | Willingness to receive Mentor feedback and continuously improve source code | ✅ | ☐ | ☐ |
+| 7 | **Communication** | Presenting ideas and reporting work clearly | ☐ | ✅ | ☐ |
+| 8 | **Teamwork** | Working effectively with peers and participating actively in team activities | ✅ | ☐ | ☐ |
+| 9 | **Professional Conduct** | Respecting Mentors, colleagues, and maintaining a receptive learning attitude | ✅ | ☐ | ☐ |
+| 10 | **Problem-Solving Skills** | Identifying problems, proposing creative solutions | ✅ | ☐ | ☐ |
+| 11 | **Contribution to Project/Team** | Work effectiveness, innovative ideas, recognition from the team | ✅ | ☐ | ☐ |
+| 12 | **Overall** | Comprehensive evaluation of the entire internship period | ✅ | ☐ | ☐ |
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+---
 
-### Needs Improvement
-
-* Strengthen discipline and strictly comply with the rules and regulations of the company or any organization  
-* Improve problem-solving thinking  
-* Enhance communication skills in both daily interactions and professional contexts, including handling situations effectively
+### Areas for Future Improvement:
+* **Enhance Presentation & Communication Skills**: Improve general communication abilities and English language proficiency to facilitate working in multinational companies.
+* **Advance High-Level CI/CD Automation**: Continue researching and building GitHub Actions / AWS CodePipeline automation for automated testing and deployment.
+* **Sustain Continuous Learning & Research**: Conduct deeper research into AWS services to further optimize system architecture design.

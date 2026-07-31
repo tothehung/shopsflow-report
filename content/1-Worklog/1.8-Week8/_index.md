@@ -1,57 +1,33 @@
 ---
-title: "Week 8 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 8"
+date: 2026-07-20
+weight: 8
 chapter: false
 pre: " <b> 1.8. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+- **Start Date:** July 20, 2026
+- **Completion Date:** July 25, 2026
 
-### Week 8 Objectives:
+### Objectives for Week 8:
+- Theoretical research on Containerization, Docker Multi-stage Builds & container orchestration on Amazon ECS Fargate Serverless
+- Hands-on AWS Lab: Image packaging, registry management on Amazon ECR, and deploying Fargate Services behind ALB
+- Complete Docker microservices packaging (React Frontend Nginx & Spring Boot Backend Java 21) and Nginx reverse proxy `/api` configuration for Shopsflow
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to implement this week:
+| Day | Task |
+| --- | --- |
+| 2 | Study Docker Containerization theory: Packaging application code, image size optimization via Docker Multi-stage Builds, and Serverless Container orchestration on Amazon ECS Fargate. |
+| 3 | Research Amazon ECR container registry, Task Definitions configuration (CPU, Memory, Container Definitions, Port Mappings), and ECS Cluster setup. |
+| 4 | Hands-on AWS Lab (Docker Container Packaging): Draft Dockerfile for React Frontend (Nginx 1.25) & Spring Boot Backend (Java 21), build and push images to Amazon ECR repositories. |
+| 5 | Hands-on AWS Lab (Amazon ECS Fargate Deployment): Create ECS Task Definition, deploy multi-container Fargate Service fronted by Application Load Balancer (ALB). |
+| 6 | Configure Nginx reverse proxy routing `/api` to Spring Boot Backend, fine-tune RAM/CPU for Shopsflow Fargate Services, and compile Week 8 report. |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Results achieved in Week 8:
+* Completed Week 8 tasks on schedule (Docker Containerization & ECS Fargate Labs).
+* Successfully containerized Shopsflow microservices and operated stably on ECS Fargate Serverless Containers.
 
-
-### Week 8 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### References & Study Materials:
+- [Amazon ECS Fargate User Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html)
+- [Amazon ECR User Guide](https://docs.aws.amazon.com/AmazonECR/latest/userguide/)
+- [Docker Multi-Stage Build Guide](https://docs.docker.com/build/building/multi-stage/)

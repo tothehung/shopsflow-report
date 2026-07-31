@@ -1,59 +1,34 @@
 ---
 title: "Worklog Tuần 2"
-date: 2024-01-01
-weight: 1
+date: 2026-06-08
+weight: 2
 chapter: false
 pre: " <b> 1.2. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 08/06/2026
+- **Ngày hoàn thành:** 13/06/2026
 
 ### Mục tiêu tuần 2:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu lý thuyết dịch vụ máy chủ ảo Amazon EC2 (Instance Types, AMIs, Key Pairs, User Data Scripts)
+- Tìm hiểu các loại lưu trữ khối Amazon EBS Volumes (gp3, io3) & lưu trữ đối tượng Amazon S3
+- Thực hành dựng Web Server Linux trên EC2, cấu hình EBS Storage và mã hóa dữ liệu bảo mật bằng AWS KMS
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Tìm hiểu lý thuyết Amazon EC2: Các họ máy chủ (General Purpose, Compute/Memory Optimized), mô hình tính phí (On-Demand, Reserved, Spot Instances) và cơ chế khởi tạo với User Data. |
+| 3 | Nghiên cứu công nghệ lưu trữ khối Amazon EBS (Volume Types gp3/io2, Snapshots) và lưu trữ đối tượng Amazon S3 (Bucket Policies, CORS, Versioning, Storage Classes). |
+| 4 | Thực hành bài Lab AWS (Amazon EC2 Compute Setup): Khởi tạo máy chủ EC2 Amazon Linux 2023, tạo Key Pair SSH, cấu hình UserData script tự động cài đặt Nginx Web Server. |
+| 5 | Thực hành bài Lab AWS (EBS & S3 Storage Setup): Khởi tạo EBS Volume gp3, attach vào máy chủ EC2, format ổ đĩa ext4 và tạo S3 Bucket lưu trữ tài liệu tĩnh. |
+| 6 | Tìm hiểu dịch vụ mã hóa AWS KMS: Khởi tạo Customer Managed Key (CMK), kích hoạt mã hóa Server-Side Encryption (SSE-KMS) cho S3/EBS và hoàn thiện báo cáo tuần 2. |
 
 ### Kết quả đạt được tuần 2:
+* Hoàn thành đúng tiến độ công việc tuần 2 (EC2, EBS, S3 & KMS Encryption Labs).
+* Nắm vững nguyên lý hoạt động của EC2, S3 và thành thạo kỹ năng mã hóa bảo mật dữ liệu với AWS KMS.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [Amazon EC2 User Guide for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)
+- [Amazon EBS Volume Types & Performance Guide](https://docs.aws.amazon.com/ebs/)
+- [Amazon S3 User Guide & Security Best Practices](https://docs.aws.amazon.com/AmazonS3/latest/userguide/)
+- [AWS Key Management Service (KMS) Developer Guide](https://docs.aws.amazon.com/kms/latest/developerguide/)

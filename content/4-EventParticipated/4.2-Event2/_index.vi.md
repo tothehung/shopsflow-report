@@ -1,125 +1,122 @@
 ---
 title: "Event 2"
-date: 2024-01-01
-weight: 1
+date: 2026-07-11
+weight: 2
 chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
-
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch "AWS Technical Deep Dive & Certification Roadmap (11/7)"
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- **Ứng dụng AI/Agent vào Security:** Giới thiệu công nghệ AWS Security Agent (Frontier Agent) dựa trên Amazon Bedrock để tự động hóa toàn bộ vòng đời bảo mật ứng dụng Web (Design, Code, Pentest).
+- **Chuẩn hóa Tư duy Vận hành & Giám sát (Observability):** Chuyển dịch tư duy từ việc chỉ theo dõi hạ tầng truyền thống (SLA/Infrastructure metrics) sang giám sát trải nghiệm thực tế của người dùng (User Experience & Business metrics).
+- **Chiến lược Chinh phục Chứng chỉ AWS:** Cung cấp lộ trình ôn luyện chiến lược cho chứng chỉ AWS Certified Cloud Practitioner (CLF-C02) cùng các kỹ thuật làm bài phỏng vấn / thi cử thực tế.
+
+---
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Thịnh Nguyễn** – *DevOps/DevSecOps/Cloud Engineer, Styl Solutions* (First Cloud AI Journey Member).
+- **Nguyễn Huỳnh Sơn** – *Infrastructure Support Engineer, Endava* (Ex-Infrastructure Reliability Engineer at SPS, AWS Student Builder Group HUFLIT Member).
+- **Ngô Lê Tấn Huy** – *Presenter / Cloud Engineering Enthusiast*.
+
+---
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### 1. Securing Your Web Apps With AWS Security Agent (Diễn giả: Thịnh Nguyễn)
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+- **Điểm nghẽn Bảo mật Truyền thống (The Security Bottleneck):**
+  - Đánh giá an ninh mạng (Pentest) thủ công tốn thời gian (kéo dài hàng tuần), chi phí đắt đỏ ($5,000 - $20,000/đợt) và kết quả phụ thuộc vào cảm xúc/trình độ kỹ sư.
+- **AWS Security Agent (Frontier Agent):**
+  - **Autonomous Reasoning:** Sử dụng Amazon Bedrock để tự lập kế hoạch và thực thi nhiệm vụ bảo mật mà không cần con người can thiệp.
+  - **Toàn bộ vòng đời (Full Lifecycle):**
+    1. *Design Security Review:* Đánh giá file Markdown hoặc code Terraform theo các bộ tiêu chuẩn Managed Packs (PCI DSS, NIST CSF, AWS Well-Architected). Free tier: 200 reviews/tháng.
+    2. *Code Security Review:* Tích hợp trực tiếp vào GitHub/GitLab Pull Requests, tự động comment lỗ hổng và đề xuất mã sửa lỗi (Auto-PR Fixes). Free tier: 1,000 PR reviews/tháng.
+    3. *Automated Pentesting:* Tự động thực thi chuỗi khai thác đa bước (Multi-step exploit chains như IDOR -> XSS), xác thực như người dùng thực và cung cấp báo cáo Verifiable Findings (bằng chứng khai thác thực tế).
+- **Chi phí & Hạn chế thực tế:**
+  - *Chi phí:* Pay-as-you-go $50/Task-Hour (So với đợt Pentest $10,000 thì đây là mức giá tối ưu cho doanh nghiệp).
+  - *Hạn chế:* Dễ bị chặn bởi cơ chế xác thực phức tạp (MFA, Biometrics, mTLS); khó phát hiện lỗi logic nghiệp vụ phức tạp (Business logic flaws).
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+#### 2. SLA and Monitoring: From SLA to Monitoring what really matters (Diễn giả: Nguyễn Huỳnh Sơn)
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+- **Định nghĩa SLA & Quản trị Rủi ro (Risk Management):**
+  - SLA (Service Level Agreement) là cam kết chính thức về mức độ dịch vụ giữa nhà cung cấp và khách hàng.
+  - Giám sát (Monitoring) nằm trong quy trình quản trị rủi ro: *Identify risk -> Monitor signals -> Respond -> Improve*.
+- **Khoảng cách giữa "Healthy Infrastructure" và "Happy User":**
+  - **Kim tự tháp Giám sát (Monitoring Pyramid):**
+    1. *Customer Experience:* User có đăng nhập, mua hàng được không? (Mức cao nhất)
+    2. *Business Metrics:* Tỷ lệ đăng nhập thành công, số lượng đơn hàng, doanh thu.
+    3. *Application Metrics:* Đô trễ (Latency), Tỷ lệ lỗi (Error rate), Số lượng request.
+    4. *Infrastructure Metrics:* CPU, Memory, Disk, Network.
+    5. *Cloud Provider:* EC2, RDS, ALB, S3.
+  - **Thực tế nghiệt ngã:** Mọi chỉ số hạ tầng báo "Green" (CPU 18%, ALB Target 2/2, Healthcheck /health 200 OK) không đồng nghĩa với trải nghiệm người dùng tốt. Nếu kết nối cơ sở dữ liệu (RDS) thất bại, luồng `/login` trả về lỗi nhưng hệ thống giám sát server vẫn báo bình thường.
+- **Lời khuyên vận hành:** *"Everything fails all the time, so plan for failure and nothing fails"* (Dr. Werner Vogels - CTO Amazon). Doanh nghiệp chịu trách nhiệm cho Trải nghiệm khách hàng, không chỉ là độ sẵn sàng của máy chủ.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### 3. Inside The Exam: AWS Cloud Practitioner (Diễn giả: Ngô Lê Tấn Huy)
 
-#### Domain-Driven Design (DDD)
+- **Cấu trúc bài thi AWS Certified Cloud Practitioner (CLF-C02):**
+  - Bài thi gồm 65 câu hỏi trắc nghiệm / nhiều lựa chọn, thời lượng 90 phút (người không nói tiếng Anh bản ngữ được xin thêm 30 phút), điểm đạt $\ge 700/1000$.
+  - **Phân bổ trọng số 4 Domain:**
+    1. *Domain 1: Cloud Concepts (24%)* – Tư duy chuyển đổi số, 6 lợi ích Cloud, AWS WAF, AWS CAF.
+    2. *Domain 2: Security and Compliance (30%)* – Shared Responsibility Model, IAM (Least Privilege), Security Groups vs NACLs, AWS Shield/WAF, AWS Artifact.
+    3. *Domain 3: Cloud Technology and Services (34%)* – Khái niệm & Use case các dịch vụ Compute, Storage, Database, Networking.
+    4. *Domain 4: Billing, Pricing, and Support (12%)* – Các mô hình giá EC2, AWS Cost Explorer, AWS Budgets, các gói Support Plan.
+- **Phương pháp ôn luyện & Thi cử hiệu quả:**
+  - **Map Keyword Thinking:** Gắn liền tên dịch vụ với 1–2 Từ khóa cốt lõi (ví dụ: *"Decouple/Microservices"* -> SQS; *"Data monetization"* -> Business Perspective in CAF).
+  - **Review bài làm sai:** Phân tích kỹ lý do vì sao đáp án A đúng và B, C, D sai để tránh "bẫy" của đề thi.
+  - **Kỹ thuật làm bài (Tips & Tricks):** Sử dụng phương pháp loại trừ (Elimination) để loại bỏ các dịch vụ bịa đặt; sử dụng tính năng *"Flag for review"* cho các câu hỏi phân vân; lưu ý các từ khóa quyết định (*NOT, Least cost, Most scalable*).
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
-
-#### Event-Driven Architecture
-
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
-
-#### Compute Evolution
-
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
-
-#### Amazon Q Developer
-
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+---
 
 ### Những Gì Học Được
 
-#### Tư Duy Thiết Kế
+#### Tư Duy Bảo Mật & AI (DevSecOps Mindset)
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+- **Chuyển dịch sang Pentesting tự động:** Tận dụng Generative AI Agents để kiểm tra an ninh hệ thống liên tục trên CI/CD thay vì chờ đến đợt đánh giá định kỳ hàng năm.
+- **Kiểm chứng thực tế (Verifiable Proof):** Đánh giá lỗ hổng bảo mật dựa trên bằng chứng khai thác thành công chứ không chỉ dừng lại ở cảnh báo lý thuyết của các công cụ scan tĩnh (SAST/DAST).
 
-#### Kiến Trúc Kỹ Thuật
+#### Tư Duy Giám Sát Chiều Sâu (Observability Mindset)
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+- **Lấy người dùng làm trung tâm (User-Centric Monitoring):** Xây dựng Dashboard và Metric giám sát dựa trên luồng hành vi thực tế của khách hàng (Login, Checkout, Payment) thay vì chỉ nhìn vào CPU/Memory.
+- **Tự động hóa Cảnh báo (Alerting Flow):** Thiết lập luồng từ *Custom Metric -> CloudWatch Alarm -> SNS Topic -> Email/Slack* để phát hiện và xử lý sự cố trước khi khách hàng phàn nàn.
 
-#### Chiến Lược Hiện Đại Hóa
+#### Phương Pháp Học & Lấy Chứng Chỉ Cloud
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+- **Học theo Use Case & Keyword:** Không cần nhớ cấu hình chi tiết, tập trung nắm vững bức tranh tổng thể (Big-picture overview) và mục đích sử dụng dịch vụ.
+- **Tự tay thực hành (Hands-on Practice):** Sử dụng AWS Free Tier để trải nghiệm thực tế các dịch vụ cốt lõi, giúp ghi nhớ lâu và trực quan hóa kiến thức lý thuyết.
 
-### Ứng Dụng Vào Công Việc
+---
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+### Ứng Dụng Vào Công Việc & Dự Án
 
-### Trải nghiệm trong event
+- **Triển khai DevSecOps trong dự án:**
+  - Tích hợp công cụ scan code và tự động kiểm tra kiến trúc Infrastructure as Code (Terraform) trên GitHub Actions/GitLab CI.
+- **Xây dựng Hệ thống Giám sát toàn diện:**
+  - Thiết lập Synthetic Monitoring / Custom Metrics theo dõi tỷ lệ thành công của các API quan trọng (đăng nhập, thanh toán).
+  - Cấu hình cảnh báo CloudWatch Alarm kết hợp Amazon SNS gửi thông báo tức thì qua Telegram/Slack khi luồng nghiệp vụ bị gián đoạn.
+- **Lập kế hoạch thi lấy chứng chỉ AWS:**
+  - Hoàn thành khóa học *Cloud Practitioner Essentials* trên AWS Skill Builder.
+  - Ôn luyện Đề thi mẫu, áp dụng phương pháp loại trừ và phân tích bẫy đề thi để tự tin đạt chứng chỉ CLF-C02 trong thời gian ngắn nhất.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+---
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+### Trải Nghiệm & Thu Hoạch Cá Nhân
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+Tham gia sự kiện ngày 11/7 mang lại nhiều kiến thức thực chiến quý báu, cập nhật những công nghệ bảo mật tiên tiến nhất cũng như chuẩn hóa tư duy vận hành hệ thống Cloud.
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+#### Học hỏi từ các diễn giả
+- **Anh Thịnh Nguyễn:** Mở rộng góc nhìn về việc ứng dụng AI Agents vào thử nghiệm xâm nhập (Pentest) thực tế trên AWS, hiểu rõ ưu điểm và những điểm giới hạn về chi phí/kỹ thuật.
+- **Anh Nguyễn Huỳnh Sơn:** Định hình lại tư duy về Observability, hiểu rõ câu nói *"Healthy infrastructure $\neq$ Happy users"* và tầm quan trọng của việc giám sát luồng trải nghiệm khách hàng.
+- **Anh Ngô Lê Tấn Huy:** Nắm trọn lộ trình chiến lược, mẹo làm bài thi và cách tư duy từ khóa để chinh phục chứng chỉ AWS Certified Cloud Practitioner một cách hiệu quả nhất.
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+#### Bài học đắt giá
+- **Security-first & Automation:** Bảo mật cần được đưa vào ngay từ khâu thiết kế (Design Review) và mã nguồn (Code Review) thông qua tự động hóa.
+- **Chịu trách nhiệm về Trải nghiệm:** Đảm bảo hệ thống hoạt động không dừng lại ở việc server "sống", mà phải đảm bảo người dùng cuối thực hiện thành công giao dịch.
+- **Sự chuẩn bị kỹ lưỡng:** Bất kể là vận hành hệ thống hay tham gia kỳ thi chứng chỉ, việc hiểu rõ bản chất và chuẩn bị có chiến lược luôn là yếu tố quyết định thành công.
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+---
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+> **Tổng kết:** Sự kiện giúp tôi trang bị cả tư duy kỹ thuật thực chiến (Security AI, Observability) lẫn lộ trình phát triển sự nghiệp cá nhân (AWS Certification), tạo nền tảng vững chắc để phát triển trở thành một Cloud / DevSecOps Engineer chuyên nghiệp.

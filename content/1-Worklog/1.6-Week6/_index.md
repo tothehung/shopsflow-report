@@ -1,57 +1,33 @@
 ---
-title: "Week 6 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 6"
+date: 2026-07-06
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+- **Start Date:** July 06, 2026
+- **Completion Date:** July 11, 2026
 
-### Week 6 Objectives:
+### Objectives for Week 6:
+- Theoretical research on Infrastructure as Code (IaC) with HCL Terraform, State Management & Remote State Locking via S3/DynamoDB
+- Hands-on AWS Lab: Cloud Infrastructure Automation using reusable Terraform Modules
+- Complete Terraform Modules (VPC, EC2, RDS, ALB) for Shopsflow application and execute `terraform plan` / `apply`
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to implement this week:
+| Day | Task |
+| --- | --- |
+| 2 | Study Infrastructure as Code (IaC) theory with HashiCorp Terraform: HCL syntax, Terraform State files, DynamoDB State Locking, and S3 Remote Backend architecture. |
+| 3 | Design reusable Terraform Modules architecture: Modularize `vpc`, `ec2`, `rds_postgres`, `alb` and define `variables.tf`, `outputs.tf`, `main.tf` structures. |
+| 4 | Hands-on AWS Lab (Infrastructure Automation with Terraform): Write Terraform HCL code provisioning Multi-AZ Custom VPC, Subnets, Internet Gateway, and NAT Gateway. |
+| 5 | Complete Terraform Modules for Shopsflow EC2 Linux instances, RDS PostgreSQL database, and Application Load Balancer (ALB). |
+| 6 | Execute `terraform fmt`, `terraform validate`, run `terraform plan` & `apply` for automated cloud environment setup, and compile Week 6 report. |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Results achieved in Week 6:
+* Completed Week 6 tasks on schedule (Terraform IaC Labs & Shopsflow Infrastructure Automation).
+* Automated 100% of cloud environment provisioning for Shopsflow using Terraform scripts.
 
-
-### Week 6 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### References & Study Materials:
+- [HashiCorp Terraform AWS Provider Documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [Terraform Backend S3 & DynamoDB State Locking Guide](https://developer.hashicorp.com/terraform/language/settings/backends/s3)
+- [Terraform Modules Best Practices](https://developer.hashicorp.com/terraform/language/modules)

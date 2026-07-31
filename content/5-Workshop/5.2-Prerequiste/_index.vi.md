@@ -1,242 +1,125 @@
 ---
-title : "Các bước chuẩn bị"
-date : 2024-01-01 
-weight : 2
-chapter : false
-pre : " <b> 5.2. </b> "
+title: "Thiết lập Mạng, Quyền & Secrets"
+date: 2026-06-15
+weight: 2
+chapter: false
+pre: " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Gắn IAM permission policy sau vào tài khoản aws user của bạn để triển khai và dọn dẹp tài nguyên trong workshop này.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+Bài viết này hướng dẫn xây dựng hạ tầng mạng riêng ảo **Amazon VPC Multi-AZ**, cấu hình khóa mã hóa **AWS KMS**, lưu trữ bí mật trên **AWS Secrets Manager**, thiết lập **Security Groups** phân tầng và phân quyền **IAM Role**.
 
-```
+---
 
-#### Khởi tạo tài nguyên bằng CloudFormation
+### 1. Chuẩn bị (Prerequisites)
 
-Trong lab này, chúng ta sẽ dùng N.Virginia region (us-east-1).
+* **Tài khoản AWS:** Có quyền quản trị (Administrator access).
+* **AWS Region:** Chọn Singapore (`ap-southeast-1`).
+* **Công cụ cá nhân:** Đã cài đặt AWS CLI, Git và SSH Client trên máy máy tính làm việc.
 
-Để chuẩn bị cho môi trường làm workshop, chúng ta deploy CloudFormation template sau (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Để nguyên các lựa chọn mặc định.
+---
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+### 2. Thiết lập Hạ tầng Mạng (Amazon VPC Multi-AZ)
 
-+ Lựa chọn 2 mục acknowledgement 
-+ Chọn Create stack
+Hạ tầng mạng Shopsflow được chia thành 6 subnets phân bổ trên 2 Availability Zones (`ap-southeast-1a` và `ap-southeast-1b`) để đảm bảo tính sẵn sàng cao và bảo mật tuyệt đối.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+#### Bước 1: Khởi tạo VPC
+1. Truy cập **AWS Console** → **VPC** → **Your VPCs** → **Create VPC**.
+2. Thiết lập:
+   * **VPC settings:** Chọn **VPC only**.
+   * **Name tag:** `shopsflow-vpc`
+   * **IPv4 CIDR block:** `10.0.0.0/16`
+3. Click **Create VPC**.
 
-Quá trình triển khai CloudFormation cần khoảng 15 phút để hoàn thành.
+#### Bước 2: Tạo các Subnets
+Truy cập **VPC** → **Subnets** → **Create subnet**. Chọn VPC `shopsflow-vpc`. Tạo lần lượt 6 subnets:
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+| Tên Subnet | CIDR Block | Availability Zone | Phân vùng |
+|---|---|---|---|
+| `shopsflow-public-1` | `10.0.1.0/24` | `ap-southeast-1a` | Public (ALB, NAT GW) |
+| `shopsflow-public-2` | `10.0.2.0/24` | `ap-southeast-1b` | Public (ALB) |
+| `shopsflow-private-app-1` | `10.0.3.0/24` | `ap-southeast-1a` | Private App (EC2 Backend) |
+| `shopsflow-private-app-2` | `10.0.4.0/24` | `ap-southeast-1b` | Private App (EC2 Backend) |
+| `shopsflow-private-db-1` | `10.0.5.0/24` | `ap-southeast-1a` | Private DB (RDS Primary) |
+| `shopsflow-private-db-2` | `10.0.6.0/24` | `ap-southeast-1b` | Private DB (RDS Standby) |
 
-+ 2 VPCs đã được tạo
+#### Bước 3: Tạo Internet Gateway (IGW) & NAT Gateway
+1. **Tạo Internet Gateway:**
+   * Truy cập **Internet gateways** → **Create internet gateway**.
+   * Name: `shopsflow-igw`. Click **Create**.
+   * Actions → **Attach to VPC** → Chọn `shopsflow-vpc`.
+2. **Tạo NAT Gateway:**
+   * Truy cập **NAT gateways** → **Create NAT gateway**.
+   * Name: `shopsflow-nat-gw`.
+   * **Subnet:** Chọn `shopsflow-public-1` (Phải nằm trong Public Subnet).
+   * **Elastic IP allocation ID:** Click **Allocate Elastic IP** cấp IP tĩnh cho NAT.
+   * Click **Create NAT gateway** (đợi chuyển trạng thái *Available*).
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+#### Bước 4: Thiết lập Bảng định tuyến (Route Tables)
+1. **Public Route Table (`shopsflow-public-rt`):**
+   * Target: `0.0.0.0/0` → `shopsflow-igw`.
+   * Association: `shopsflow-public-1`, `shopsflow-public-2`.
+2. **Private Route Table (`shopsflow-private-rt`):**
+   * Target: `0.0.0.0/0` → `shopsflow-nat-gw`.
+   * Association: `shopsflow-private-app-1`, `shopsflow-private-app-2`.
+3. **DB Route Table (`shopsflow-db-rt`):**
+   * Không cấu hình route ra ngoài Internet (cô lập hoàn toàn).
+   * Association: `shopsflow-private-db-1`, `shopsflow-private-db-2`.
 
-+ 3 EC2s đã được tạo
+---
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+### 3. Cấu hình Bảo mật (KMS & Secrets Manager)
+
+#### Bước 1: Tạo AWS KMS Key
+1. Truy cập **AWS KMS** → **Customer managed keys** → **Create key**.
+2. Key type: **Symmetric**, Key usage: **Encrypt and decrypt**.
+3. Alias: `shopsflow-kms-key`. Click **Create key**.
+
+#### Bước 2: Tạo Secret trên Secrets Manager
+1. Truy cập **Secrets Manager** → **Store a new secret**.
+2. Secret type: **Other type of secret**.
+3. Thêm các key/value nhạy cảm:
+   * `SPRING_DATASOURCE_PASSWORD`: `ShopsflowPass123!`
+   * `JWT_SECRET`: `ChuoiMatKhauJWTSecretMatGiaiMa64KyTuRandoom1234567890!`
+   * `VNPAY_HASH_SECRET`: `VNPayHashSecretSandboxKey123!`
+4. **Encryption key:** Chọn `shopsflow-kms-key`.
+5. Secret name: `shopsflow/production/secrets`. Click **Store**.
+
+---
+
+### 4. Thiết lập Security Groups (Phân tầng Firewall)
+
+Tạo 3 Security Groups kiểm soát kết nối phân cấp:
+
+1. **ALB Security Group (`shopsflow-alb-sg`):**
+   * Inbound: `HTTP` (Port 80) & `HTTPS` (Port 443) từ `0.0.0.0/0`.
+2. **EC2 Security Group (`shopsflow-ec2-sg`):**
+   * Inbound 1: `TCP` (Port 8080) với Source là `shopsflow-alb-sg` (chỉ nhận request từ ALB).
+   * Inbound 2: `SSH` (Port 22) từ IP làm việc của bạn (hoặc qua Session Manager).
+3. **RDS Security Group (`shopsflow-rds-sg`):**
+   * Inbound: `PostgreSQL` (Port 5432) với Source là `shopsflow-ec2-sg` (chỉ nhận truy vấn từ EC2).
+
+---
+
+### 5. Tạo IAM Role cho EC2 Backend
+
+1. Truy cập **IAM** → **Roles** → **Create role** → Use case: **EC2**.
+2. Attach AWS Managed Policies:
+   * `CloudWatchAgentServerPolicy`
+   * `AmazonS3FullAccess`
+3. Thêm Inline Policy cấp quyền đọc Secret và giải mã KMS:
+   ```json
+   {
+     "Version": "2012-10-17",
+     "Statement": [
+       {
+         "Effect": "Allow",
+         "Action": [
+           "secretsmanager:GetSecretValue",
+           "kms:Decrypt"
+         ],
+         "Resource": "*"
+       }
+     ]
+   }
+   ```
+4. Role name: `ShopsflowEC2Role`. Click **Create role**.

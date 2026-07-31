@@ -1,57 +1,34 @@
 ---
-title: "Week 3 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 3"
+date: 2026-06-15
+weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+- **Start Date:** June 15, 2026
+- **Completion Date:** June 20, 2026
 
-### Week 3 Objectives:
+### Objectives for Week 3:
+- Theoretical research on Custom VPC virtual networks, CIDR IP blocks, Public/Private Subnets, and Internet Gateways
+- Study network firewall security: Stateful Security Groups vs Stateless Network ACLs (NACLs) & VPC Flow Logs
+- Hands-on deployment of Multi-AZ Custom VPC, NAT Gateway for Private Subnets, and SSH Bastion Host
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to implement this week:
+| Day | Task |
+| --- | --- |
+| 2 | Study Amazon VPC theory: CIDR Block IP allocation (`10.0.0.0/16`), Public vs Private Subnet topology, Route Tables, and Internet Gateway (IGW) mechanics. |
+| 3 | Research network security enforcement: Stateful Security Groups (instance-level firewall) vs Stateless Network ACLs (subnet-level firewall) and Inbound/Outbound rules. |
+| 4 | Hands-on AWS Lab (Custom VPC Multi-AZ Architecture): Create Custom VPC, split into 2 Public Subnets & 2 Private Subnets across 2 distinct Availability Zones. |
+| 5 | Hands-on AWS Lab (NAT Gateway & Bastion Host Setup): Allocate Elastic IP (EIP), deploy NAT Gateway enabling Private Subnet outbound internet, and setup SSH Bastion Host. |
+| 6 | Enable VPC Flow Logs streaming to CloudWatch Log Groups, audit SSH security access paths, and compile Week 3 progress report. |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Results achieved in Week 3:
+* Completed Week 3 tasks on schedule (Networking & Custom VPC Architecture Labs).
+* Designed and built a secure Multi-AZ Custom VPC virtual network following AWS best practices.
 
-
-### Week 3 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### References & Study Materials:
+- [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/)
+- [AWS Security Groups & Network ACLs Guide](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html)
+- [AWS NAT Gateway Setup & Administration](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)
+- [AWS VPC Flow Logs Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)

@@ -1,59 +1,33 @@
 ---
 title: "Worklog Tuần 4"
-date: 2024-01-01
-weight: 1
+date: 2026-06-22
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+- **Ngày bắt đầu:** 22/06/2026
+- **Ngày hoàn thành:** 27/06/2026
 
 ### Mục tiêu tuần 4:
-
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Nghiên cứu giải pháp chịu tải High Availability với Application Load Balancer (ALB) và Auto Scaling Groups (ASG)
+- Tìm hiểu quy trình quản lý và đăng ký chứng chỉ bảo mật HTTPS SSL với AWS Certificate Manager (ACM)
+- Thực hành triển khai ALB đằng sau 2 máy chủ EC2 Web Servers, thiết lập luật co giãn tự động theo CPU load và chạy bài kiểm thử chịu tải Stress Test
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-
+| Thứ | Công việc |
+| --- | --- |
+| 2 | Nghiên cứu lý thuyết Application Load Balancer (ALB): Cấu trúc Target Groups, Health Checks, Routing Rules theo URL Path và thuật toán điều hướng Round Robin. |
+| 3 | Tìm hiểu Amazon EC2 Auto Scaling Groups (ASG): Launch Templates, Dynamic Scaling Policies (Target Tracking theo CPU), Min/Max/Desired Capacity và khái niệm High Availability. |
+| 4 | Nghiên cứu dịch vụ AWS Certificate Manager (ACM): Cơ chế xác thực tên miền DNS Validation và tích hợp chứng chỉ HTTPS SSL vào bộ cân bằng tải ALB. |
+| 5 | Thực hành bài Lab AWS (ALB & ASG Setup): Tạo Launch Template, khởi tạo ALB phân phối lưu lượng vào 2 EC2 Web Servers ở 2 AZs khác nhau và gắn chứng chỉ SSL ACM. |
+| 6 | Cấu hình Auto Scaling policy tự động tăng máy chủ khi CPU > 70%, sử dụng công cụ `stress` giả lập lưu lượng cao kiểm thử co giãn và hoàn thiện báo cáo tuần 4. |
 
 ### Kết quả đạt được tuần 4:
+* Hoàn thành đúng tiến độ công việc tuần 4 (High Availability & Auto Scaling Labs).
+* Hiểu sâu nguyên lý cân bằng tải, co giãn tự động và bảo mật HTTPS SSL cho ứng dụng điện toán đám mây.
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+### Nguồn tài liệu hướng dẫn tham khảo:
+- [Elastic Load Balancing Application Load Balancers Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)
+- [Amazon EC2 Auto Scaling Groups User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/)
+- [AWS Certificate Manager (ACM) SSL Certificate User Guide](https://docs.aws.amazon.com/acm/latest/userguide/)

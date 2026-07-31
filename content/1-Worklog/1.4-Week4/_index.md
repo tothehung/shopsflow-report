@@ -1,57 +1,33 @@
 ---
-title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+title: "Worklog Week 4"
+date: 2026-06-22
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
-{{% notice warning %}} 
-⚠️ **Note:** The following information is for reference purposes only. Please **do not copy verbatim** for your own report, including this warning.
-{{% /notice %}}
 
+- **Start Date:** June 22, 2026
+- **Completion Date:** June 27, 2026
 
-### Week 4 Objectives:
+### Objectives for Week 4:
+- Theoretical research on High Availability solutions with Application Load Balancers (ALB) and Auto Scaling Groups (ASG)
+- Study SSL certificate management and issuance using AWS Certificate Manager (ACM)
+- Hands-on deployment of ALB fronting EC2 Web Servers, configure CPU-based Auto Scaling policies, and execute Stress Testing
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+### Tasks to implement this week:
+| Day | Task |
+| --- | --- |
+| 2 | Study Application Load Balancer (ALB) concepts: Target Groups, Health Checks, Path-based Routing Rules, and Round Robin distribution algorithms. |
+| 3 | Research Amazon EC2 Auto Scaling Groups (ASG): Launch Templates, Dynamic Target Tracking Scaling Policies (CPU threshold), Min/Max/Desired capacities, and High Availability topology. |
+| 4 | Research AWS Certificate Manager (ACM): DNS Validation procedures and binding HTTPS SSL certificates to Application Load Balancers. |
+| 5 | Hands-on AWS Lab (ALB & ASG Setup): Build Launch Template, provision ALB distributing traffic to EC2 Web Servers across 2 AZs, and attach ACM SSL certificate. |
+| 6 | Configure ASG scaling rule to auto-scale EC2 instances when CPU > 70%, run `stress` utility for load testing validation, and compile Week 4 report. |
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Results achieved in Week 4:
+* Completed Week 4 tasks on schedule (High Availability & Auto Scaling Labs).
+* Mastered load balancing, auto-scaling principles, and HTTPS SSL security enforcement for cloud applications.
 
-
-### Week 4 Achievements:
-
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+### References & Study Materials:
+- [Elastic Load Balancing Application Load Balancers Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)
+- [Amazon EC2 Auto Scaling Groups User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/)
+- [AWS Certificate Manager (ACM) SSL Certificate User Guide](https://docs.aws.amazon.com/acm/latest/userguide/)

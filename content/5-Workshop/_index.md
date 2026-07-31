@@ -1,31 +1,37 @@
 ---
-title: "Workshop"
-date: 2024-01-01
+title: "Shopsflow Workshop on AWS"
+date: 2026-06-15
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Shopsflow — Full-Stack E-Commerce Application Deployment on AWS
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+This workshop provides step-by-step instructions for deploying the complete **Shopsflow** E-Commerce system onto **AWS Cloud** infrastructure following a secure, highly available 3-Tier Architecture.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+The **Shopsflow** system includes:
+- **Customer Storefront:** React + Vite SPA for product browsing, cart management, and checkout via the **VNPay Sandbox** payment gateway.
+- **Admin Portal:** Product catalog management, order tracking, inventory control, and customer review moderation.
+- **Spring Boot Backend API:** RESTful API handling all business logic including JWT authentication, role-based access control (Customer / Admin), and asynchronous order processing.
+- **AWS Infrastructure:** All cloud resources managed via **Terraform Modules IaC**, secured with **Secrets Manager & KMS**, and monitored via **CloudWatch**.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+After completing this workshop, you will be able to:
+* Design and deploy a **Multi-AZ VPC** infrastructure with multi-tier security zoning.
+* Configure **ALB + Auto Scaling Groups** to deliver high availability for the Backend API.
+* Operate **RDS PostgreSQL Multi-AZ** with automated database backup via S3 Gateway Endpoint.
+* Protect the application with **AWS WAF**, **Secrets Manager**, **KMS**, and **IAM Least Privilege**.
+* Implement comprehensive monitoring with **CloudWatch Dashboards, Alarms, and Log Groups**.
 
-#### Content
+---
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+#### Workshop Content
+
+1. [Introduction & Architecture](5.1-Workshop-overview/)
+2. [Network Setup, Access Control & Secrets](5.2-Prerequiste/)
+3. [Deploy Database & Backend API (RDS + EC2 + ALB)](5.3-S3-vpc/)
+4. [Deploy Frontend (S3 + CloudFront + WAF)](5.4-S3-onprem/)
+5. [Monitoring & Backup (CloudWatch + S3)](5.5-Policy/)
+6. [Clean Up Resources](5.6-Cleanup/)

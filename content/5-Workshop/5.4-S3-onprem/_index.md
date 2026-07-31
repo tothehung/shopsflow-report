@@ -1,20 +1,38 @@
 ---
-title : "Access S3 from on-premises"
-date : 2024-01-01
-weight : 4
-chapter : false
-pre : " <b> 5.4. </b> "
+title: "Deploy Frontend (S3 + CloudFront + WAF)"
+date: 2026-06-15
+weight: 4
+chapter: false
+pre: " <b> 5.4. </b> "
 ---
 
-#### Overview
+This section guides you through building and deploying the **React + Vite** frontend onto **Amazon S3** for static hosting, distributing it globally via **Amazon CloudFront CDN**, and protecting it with **AWS WAF**.
 
-+ In this section, you will create an Interface endpoint to access Amazon S3 from a simulated on-premises environment. The Interface endpoint will allow you to route to Amazon S3 over a VPN connection from your simulated on-premises environment.
+### Architecture Overview
 
-+ Why using **Interface endpoint**: 
-    + Gateway endpoints only work with resources running in the VPC where they are created. Interface endpoints work with resources running in VPC, and also resources running in on-premises environments. Connectivty from your on-premises environment to the cloud can be provided by AWS Site-to-Site VPN or AWS Direct Connect.
-    + Interface endpoints allow you to connect to services powered by AWS PrivateLink. These services include some AWS services, services hosted by other AWS customers and partners in their own VPCs (referred to as PrivateLink Endpoint Services), and supported AWS Marketplace Partner services. For this workshop, we will focus on connecting to Amazon S3.
+```
+User Browser
+    │  HTTPS
+    ▼
+[AWS WAF]  ──── Blocks: SQLi, XSS, Bad Inputs
+    │
+    ▼
+[CloudFront CDN]  ──── Global edge locations  ──── HTTPS only
+    │  Origin Access Control (OAC)
+    ▼
+[S3 Bucket]  ──── Private (no public access)
+    shopsflow-frontend-<account-id>/
+    ├── index.html
+    └── assets/ (JS, CSS bundles)
+```
 
-![Interface endpoint architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
+**Key design decisions:**
+- S3 bucket has **no public access** — CloudFront reads it via OAC signed requests.
+- **SPA error pages**: 403/404 → `index.html` with HTTP 200 to support React Router.
+- **WAF** is attached at the CloudFront level, inspecting all requests at the edge.
 
+#### Content
 
-
+1. [Build & Upload Frontend to S3](5.4.1-s3-frontend/)
+2. [Create CloudFront Distribution](5.4.2-cloudfront/)
+3. [Protect with AWS WAF](5.4.3-waf/)
