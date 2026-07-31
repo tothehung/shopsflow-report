@@ -27,8 +27,6 @@ pre: " <b> 4.3. </b> "
 - **Team 3K (Sinh viên FPT):** Giải pháp *Shepherd (Small Human Fluctuation Federation Response)* – Hệ thống giám sát luồng người theo thời gian thực kết hợp AI Agent điều phối đám đông qua camera kết nối AWS Kinesis & Bedrock.
 - **Team Six Pillars:** Giải pháp *Adaptive Workflow Engine for Anti-Money Laundering (AML)* – Hệ thống Multi-Agent phát hiện, điều tra và hỗ trợ phòng chống rửa tiền cho ngân hàng và các sàn giao dịch tài chính.
 
-![Hình ảnh sự kiện FCAJ x Agentic AI Build Week](/images/4-EventParticipated/4.3-Event3/event3.jpg)
-
 ---
 
 ### Nội Dung Nổi Bật
@@ -124,5 +122,12 @@ Theo dõi và học hỏi từ sự kiện **“FCAJ x Agentic AI Build Week: Sh
 - **Show Up - Hãy cứ dũng cảm dấn thân:** Đừng chờ đợi đến khi "đủ trình độ" mới tham gia; hãy cứ đăng ký Hackathon để quăng mình vào môi trường thực chiến và học hỏi nhanh nhất.
 - **Build - Tập trung vào Giá trị Thực tế:** Xây dựng sản phẩm giải quyết đúng Pain Point, làm chủ nền tảng cốt lõi và luôn coi công nghệ là phương tiện phục vụ con người.
 - **Pitch & Win - Bình tĩnh và Tự tin:** Trình bày giải pháp bằng sự am hiểu sâu sắc, thể hiện tinh thần học hỏi, đón nhận phản hồi từ Chuyên gia và trân trọng từng khoảnh khắc trải nghiệm cùng đồng đội.
+
+---
+
+### Hình Ảnh Sự Kiện
+
+![Hình ảnh sự kiện FCAJ x Agentic AI Build Week](/images/4-EventParticipated/4.3-Event3/event3.jpg)
+
 
 ---

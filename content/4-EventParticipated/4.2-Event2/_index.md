@@ -40,8 +40,6 @@ pre: " <b> 4.2. </b> "
   - *Pricing:* Pay-as-you-go at $50/Task-Hour (extremely cost-effective compared to traditional $10,000 pentest engagements).
   - *Limitations:* Vulnerable to complex authentication mechanisms (MFA, Biometrics, mTLS); struggles with nuanced business logic flaws.
 
-![Securing Your Web Apps With AWS Security Agent Presentation](/images/4-EventParticipated/4.2-Event2/event2-1.jpg)
-
 ---
 
 #### 2. SLA and Monitoring: From SLA to Monitoring What Really Matters (Speaker: Nguyen Huynh Son)
@@ -59,8 +57,6 @@ pre: " <b> 4.2. </b> "
   - **Harsh Reality:** All infrastructure metrics reporting "Green" (CPU 18%, ALB Target 2/2, Healthcheck `/health` 200 OK) does not guarantee a good user experience. If database connectivity fails, `/login` returns errors while server monitoring stays green.
 - **Operational Advice:** *"Everything fails all the time, so plan for failure and nothing fails"* (Dr. Werner Vogels - CTO, Amazon). Enterprises are responsible for Customer Experience, not just server uptime.
 
-![SLA and Monitoring Presentation](/images/4-EventParticipated/4.2-Event2/event2-2.jpg)
-
 ---
 
 #### 3. Inside The Exam: AWS Cloud Practitioner (Speaker: Ngo Le Tan Huy)
@@ -76,8 +72,6 @@ pre: " <b> 4.2. </b> "
   - **Map Keyword Thinking:** Link service names directly to 1–2 core keywords (e.g., *"Decouple/Microservices"* -> SQS; *"Data monetization"* -> Business Perspective in CAF).
   - **Analyze Wrong Options:** Understand why option A is correct and B, C, D are incorrect to avoid exam traps.
   - **Test-Taking Tips:** Use the Process of Elimination to discard fake services; use *"Flag for review"* for uncertain questions; watch for key qualifiers (*NOT, Least cost, Most scalable*).
-
-![Inside The Exam AWS Cloud Practitioner Presentation](/images/4-EventParticipated/4.2-Event2/event2-3.jpg)
 
 ---
 
@@ -127,8 +121,19 @@ Attending the July 11 technical session provided invaluable practical insights, 
 - **Responsibility for User Experience:** System health extends beyond keeping servers alive; business transactions must succeed end-to-end.
 - **Strategic Preparation:** Whether operating cloud systems or preparing for certification exams, understanding core fundamentals and executing strategically determines success.
 
-![AWS Technical Deep Dive Event Group Photo](/images/4-EventParticipated/4.2-Event2/event2-4.jpg)
-
 ---
 
 > **Summary:** The event equipped me with both practical engineering mindsets (Security AI, Observability) and a personal career growth roadmap (AWS Certification), laying a solid foundation for my journey toward becoming a professional Cloud / DevSecOps Engineer.
+
+---
+
+### Event Photos
+
+![Securing Your Web Apps With AWS Security Agent Presentation](/images/4-EventParticipated/4.2-Event2/event2-1.jpg)
+
+![SLA and Monitoring Presentation](/images/4-EventParticipated/4.2-Event2/event2-2.jpg)
+
+![Inside The Exam AWS Cloud Practitioner Presentation](/images/4-EventParticipated/4.2-Event2/event2-3.jpg)
+
+![AWS Technical Deep Dive Event Group Photo](/images/4-EventParticipated/4.2-Event2/event2-4.jpg)
+

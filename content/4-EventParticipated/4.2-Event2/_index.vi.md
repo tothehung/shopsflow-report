@@ -40,8 +40,6 @@ pre: " <b> 4.2. </b> "
   - *Chi phí:* Pay-as-you-go $50/Task-Hour (So với đợt Pentest $10,000 thì đây là mức giá tối ưu cho doanh nghiệp).
   - *Hạn chế:* Dễ bị chặn bởi cơ chế xác thực phức tạp (MFA, Biometrics, mTLS); khó phát hiện lỗi logic nghiệp vụ phức tạp (Business logic flaws).
 
-![Trình bày về ứng dụng AWS Security Agent trong bảo mật ứng dụng Web](/images/4-EventParticipated/4.2-Event2/event2-1.jpg)
-
 ---
 
 #### 2. SLA and Monitoring: From SLA to Monitoring what really matters (Diễn giả: Nguyễn Huỳnh Sơn)
@@ -59,8 +57,6 @@ pre: " <b> 4.2. </b> "
   - **Thực tế nghiệt ngã:** Mọi chỉ số hạ tầng báo "Green" (CPU 18%, ALB Target 2/2, Healthcheck /health 200 OK) không đồng nghĩa với trải nghiệm người dùng tốt. Nếu kết nối cơ sở dữ liệu (RDS) thất bại, luồng `/login` trả về lỗi nhưng hệ thống giám sát server vẫn báo bình thường.
 - **Lời khuyên vận hành:** *"Everything fails all the time, so plan for failure and nothing fails"* (Dr. Werner Vogels - CTO Amazon). Doanh nghiệp chịu trách nhiệm cho Trải nghiệm khách hàng, không chỉ là độ sẵn sàng của máy chủ.
 
-![Trình bày về mô hình SLA và quan điểm Giám sát Observability](/images/4-EventParticipated/4.2-Event2/event2-2.jpg)
-
 ---
 
 #### 3. Inside The Exam: AWS Cloud Practitioner (Diễn giả: Ngô Lê Tấn Huy)
@@ -76,8 +72,6 @@ pre: " <b> 4.2. </b> "
   - **Map Keyword Thinking:** Gắn liền tên dịch vụ với 1–2 Từ khóa cốt lõi (ví dụ: *"Decouple/Microservices"* -> SQS; *"Data monetization"* -> Business Perspective in CAF).
   - **Review bài làm sai:** Phân tích kỹ lý do vì sao đáp án A đúng và B, C, D sai để tránh "bẫy" của đề thi.
   - **Kỹ thuật làm bài (Tips & Tricks):** Sử dụng phương pháp loại trừ (Elimination) để loại bỏ các dịch vụ bịa đặt; sử dụng tính năng *"Flag for review"* cho các câu hỏi phân vân; lưu ý các từ khóa quyết định (*NOT, Least cost, Most scalable*).
-
-![Trình bày chiến lược ôn luyện chứng chỉ AWS Certified Cloud Practitioner](/images/4-EventParticipated/4.2-Event2/event2-3.jpg)
 
 ---
 
@@ -127,8 +121,19 @@ Tham gia sự kiện ngày 11/7 mang lại nhiều kiến thức thực chiến 
 - **Chịu trách nhiệm về Trải nghiệm:** Đảm bảo hệ thống hoạt động không dừng lại ở việc server "sống", mà phải đảm bảo người dùng cuối thực hiện thành công giao dịch.
 - **Sự chuẩn bị kỹ lưỡng:** Bất kể là vận hành hệ thống hay tham gia kỳ thi chứng chỉ, việc hiểu rõ bản chất và chuẩn bị có chiến lược luôn là yếu tố quyết định thành công.
 
-![Hình ảnh lưu niệm tập thể sự kiện AWS Technical Deep Dive & Certification Roadmap](/images/4-EventParticipated/4.2-Event2/event2-4.jpg)
-
 ---
 
 > **Tổng kết:** Sự kiện giúp tôi trang bị cả tư duy kỹ thuật thực chiến (Security AI, Observability) lẫn lộ trình phát triển sự nghiệp cá nhân (AWS Certification), tạo nền tảng vững chắc để phát triển trở thành một Cloud / DevSecOps Engineer chuyên nghiệp.
+
+---
+
+### Hình Ảnh Sự Kiện
+
+![Trình bày về ứng dụng AWS Security Agent trong bảo mật ứng dụng Web](/images/4-EventParticipated/4.2-Event2/event2-1.jpg)
+
+![Trình bày về mô hình SLA và quan điểm Giám sát Observability](/images/4-EventParticipated/4.2-Event2/event2-2.jpg)
+
+![Trình bày chiến lược ôn luyện chứng chỉ AWS Certified Cloud Practitioner](/images/4-EventParticipated/4.2-Event2/event2-3.jpg)
+
+![Hình ảnh lưu niệm tập thể sự kiện AWS Technical Deep Dive & Certification Roadmap](/images/4-EventParticipated/4.2-Event2/event2-4.jpg)
+

@@ -23,8 +23,6 @@ pre: " <b> 4.1. </b> "
 - **Bành Cẩm Vĩnh** – *Data Engineer, Renova Cloud* (AWS Community Builder).
 - **Khang Nguyễn** – *Solution Architect, Cloud Kinetics* (Cựu sinh viên Swinburne).
 
-![Tổng quan sự kiện Enterprise Cloud Architectures & Industry Application](/images/4-EventParticipated/4.1-Event1/event1-1.jpg)
-
 ---
 
 ### Nội Dung Nổi Bật
@@ -94,8 +92,15 @@ Tham gia sự kiện **“AWS: Enterprise Cloud Architectures and Industry Appli
 - **Cân bằng Kỹ thuật & Nghiệp vụ:** Sự kết hợp hài hòa giữa năng lực kỹ thuật vững vàng và sự am hiểu bài toán kinh doanh là chìa khóa để tạo ra giá trị khác biệt.
 - **Học tập suốt đời (Continuous Learning):** Công nghệ và công cụ sẽ luôn thay đổi, nhưng tư duy kiến trúc nền tảng và tinh thần học hỏi liên tục chính là giá trị cốt lõi trường tồn.
 
-![Hình ảnh thu hoạch cá nhân tại sự kiện Enterprise Cloud Architectures](/images/4-EventParticipated/4.1-Event1/event1-2.jpg)
-
 ---
 
 > **Tổng kết:** Sự kiện không chỉ trang bị kiến thức kiến trúc chuẩn doanh nghiệp mà còn định hình lại tư duy nghề nghiệp, giúp tôi tự tin và chuẩn bị tốt nhất cho hành trình trở thành một Cloud/DevOps Engineer chuyên nghiệp.
+
+---
+
+### Hình Ảnh Sự Kiện
+
+![Tổng quan sự kiện Enterprise Cloud Architectures & Industry Application](/images/4-EventParticipated/4.1-Event1/event1-1.jpg)
+
+![Hình ảnh thu hoạch cá nhân tại sự kiện Enterprise Cloud Architectures](/images/4-EventParticipated/4.1-Event1/event1-2.jpg)
+
