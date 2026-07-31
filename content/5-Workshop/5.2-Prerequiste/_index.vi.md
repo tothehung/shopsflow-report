@@ -30,6 +30,8 @@ Hạ tầng mạng Shopsflow được chia thành 6 subnets phân bổ trên 2 A
    * **IPv4 CIDR block:** `10.0.0.0/16`
 3. Click **Create VPC**.
 
+![Bước 1: Khởi tạo Amazon VPC](/images/5-Workshop/1.jpg)
+
 #### Bước 2: Tạo các Subnets
 Truy cập **VPC** → **Subnets** → **Create subnet**. Chọn VPC `shopsflow-vpc`. Tạo lần lượt 6 subnets:
 
@@ -42,17 +44,23 @@ Truy cập **VPC** → **Subnets** → **Create subnet**. Chọn VPC `shopsflow-
 | `shopsflow-private-db-1` | `10.0.5.0/24` | `ap-southeast-1a` | Private DB (RDS Primary) |
 | `shopsflow-private-db-2` | `10.0.6.0/24` | `ap-southeast-1b` | Private DB (RDS Standby) |
 
+![Bước 2: Tạo danh sách các Subnets](/images/5-Workshop/2.jpg)
+
 #### Bước 3: Tạo Internet Gateway (IGW) & NAT Gateway
 1. **Tạo Internet Gateway:**
    * Truy cập **Internet gateways** → **Create internet gateway**.
    * Name: `shopsflow-igw`. Click **Create**.
    * Actions → **Attach to VPC** → Chọn `shopsflow-vpc`.
+
+![Bước 3: Tạo và Gán Internet Gateway](/images/5-Workshop/3.jpg)
 2. **Tạo NAT Gateway:**
    * Truy cập **NAT gateways** → **Create NAT gateway**.
    * Name: `shopsflow-nat-gw`.
    * **Subnet:** Chọn `shopsflow-public-1` (Phải nằm trong Public Subnet).
    * **Elastic IP allocation ID:** Click **Allocate Elastic IP** cấp IP tĩnh cho NAT.
    * Click **Create NAT gateway** (đợi chuyển trạng thái *Available*).
+
+![Bước 3.2: Tạo NAT Gateway với Elastic IP](/images/5-Workshop/4.jpg)
 
 #### Bước 4: Thiết lập Bảng định tuyến (Route Tables)
 1. **Public Route Table (`shopsflow-public-rt`):**
@@ -64,6 +72,8 @@ Truy cập **VPC** → **Subnets** → **Create subnet**. Chọn VPC `shopsflow-
 3. **DB Route Table (`shopsflow-db-rt`):**
    * Không cấu hình route ra ngoài Internet (cô lập hoàn toàn).
    * Association: `shopsflow-private-db-1`, `shopsflow-private-db-2`.
+
+![Bước 4: Thiết lập Bảng định tuyến Route Tables](/images/5-Workshop/5.jpg)
 
 ---
 
@@ -98,6 +108,8 @@ Tạo 3 Security Groups kiểm soát kết nối phân cấp:
 3. **RDS Security Group (`shopsflow-rds-sg`):**
    * Inbound: `PostgreSQL` (Port 5432) với Source là `shopsflow-ec2-sg` (chỉ nhận truy vấn từ EC2).
 
+![Bước 5: Cấu hình phân tầng Security Groups](/images/5-Workshop/6.jpg)
+
 ---
 
 ### 5. Tạo IAM Role cho EC2 Backend
@@ -122,4 +134,6 @@ Tạo 3 Security Groups kiểm soát kết nối phân cấp:
      ]
    }
    ```
-4. Role name: `ShopsflowEC2Role`. Click **Create role**.
+4. Role Name: `ShopsflowEC2Role` → Click **Create role**.
+
+![Bước 6: Khởi tạo IAM Role cho EC2 Backend](/images/5-Workshop/7.jpg)

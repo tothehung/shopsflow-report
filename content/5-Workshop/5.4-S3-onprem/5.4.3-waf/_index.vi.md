@@ -55,9 +55,12 @@ Click **Add rules** → **Add managed rule groups** → Bật 3 rule group sau:
 - **Action:** Block
 
 #### Rule Group 3: SQL Injection Protection
-- **Tên:** `AWSManagedRulesSQLiRuleSet`
-- **Mục đích:** Chặn SQL Injection trong query strings, body, headers và URI paths
+
+- **Name:** `AWSManagedRulesSQLiRuleSet`
+- **Purpose:** Blocks SQL injection attacks in query strings, body, headers, and URI paths
 - **Action:** Block
+
+![Bước 13: Cấu hình các bộ Managed Rule Groups trên AWS WAF Web ACL](/images/5-Workshop/14.jpg)
 
 Click **Add rules**.
 
@@ -115,6 +118,8 @@ curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
 curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
 # Kết quả mong đợi: HTTP/2 200 OK
 ```
+
+![Kiểm tra AWS WAF Chặn SQLi & XSS](/images/5-Workshop/5.4-S3-onprem/result.png)
 
 ---
 

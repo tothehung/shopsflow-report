@@ -38,6 +38,8 @@ Kiến trúc Doanh nghiệp sẵn sàng cao (Enterprise HA) sử dụng các d�
    * Bucket frontend: `shopsflow-frontend-<your-account-id>`
    * Bucket backup database: `shopsflow-db-backups-<your-account-id>`
 
+![Dọn dẹp và xóa các S3 Buckets](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+
 #### 6. Xóa Secrets Manager & KMS Key
 1. Truy cập **Secrets Manager** → Chọn secret `shopsflow/production/secrets` → Actions → **Delete secret** (đặt thời gian phục hồi 7 ngày).
 2. Truy cập **KMS** → Chọn key `shopsflow-kms-key` → Actions → **Schedule key deletion** (7 ngày).

@@ -56,6 +56,8 @@ dist/
 
 2. Click **Create bucket**.
 
+![Step 11: Create S3 Static Hosting Bucket & Sync Build Files](/images/5-Workshop/12.jpg)
+
 {{% notice note %}}
 **Do not** enable "Static website hosting" on the S3 bucket — CloudFront will use **Origin Access Control (OAC)** to fetch content from S3 via a private connection. Public website hosting is not needed.
 {{% /notice %}}

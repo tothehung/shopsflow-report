@@ -14,6 +14,8 @@ This section covers configuring centralized logging and metrics with **Amazon Cl
 
 EC2 instances automatically install and run the CloudWatch Agent via User Data to collect Docker container logs and system OS metrics.
 
+![CloudWatch Monitoring & Gateway VPC Endpoint Backup Architecture](/images/5-Workshop/5.5-Policy/VPCEndpointPolicyDiagram.png)
+
 #### Start and Enable CloudWatch Agent
 ```bash
 # Connect to EC2 via Session Manager or SSH
@@ -34,10 +36,12 @@ sudo systemctl enable amazon-cloudwatch-agent
 3. **Threshold:** Static, Greater than `80%` (for 2 consecutive 5-minute evaluation periods).
 4. **Action:** Send notification to **SNS Topic** `shopsflow-alerts` (subscribed to your email).
 
-#### Alarm 2: RDS Low Storage Space (`shopsflow-rds-low-storage`)
+#### Alarm 2: RDS Low Free Storage (`shopsflow-rds-low-storage`)
 1. **Metric:** `RDS` → `Per-Database Metrics` → Select `FreeStorageSpace` for `shopsflow-postgres`.
 2. **Threshold:** Less than `2 GB` (2,147,483,648 bytes).
 3. **Action:** Send notification to SNS Topic `shopsflow-alerts`.
+
+![Step 14: CloudWatch Alarms & Monitoring Dashboards Configuration](/images/5-Workshop/15.jpg)
 
 #### Alarm 3: AWS Billing Cost Alert (`shopsflow-billing-alert`)
 1. **Metric:** `Billing` → `EstimatedCharges` → Currency: `USD`.

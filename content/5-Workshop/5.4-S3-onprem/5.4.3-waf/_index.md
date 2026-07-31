@@ -63,6 +63,8 @@ Click **Add rules** → **Add managed rule groups** → Enable the following thr
 - **Purpose:** Blocks SQL injection attacks in query strings, body, headers, and URI paths
 - **Action:** Block
 
+![Step 13: AWS WAF Web ACL Managed Rule Groups Setup](/images/5-Workshop/14.jpg)
+
 Click **Add rules**.
 
 ---
@@ -123,6 +125,8 @@ curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
 curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
 # Expected: HTTP/2 200 OK
 ```
+
+![AWS WAF SQLi & XSS Block Test Result](/images/5-Workshop/5.4-S3-onprem/result.png)
 
 ---
 

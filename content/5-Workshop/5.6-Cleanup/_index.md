@@ -38,6 +38,8 @@ Enterprise Highly Available (HA) architectures utilize AWS services billed on an
    * Frontend bucket: `shopsflow-frontend-<your-account-id>`
    * Database backup bucket: `shopsflow-db-backups-<your-account-id>`
 
+![Cleaning up and deleting S3 Buckets](/images/5-Workshop/5.6-Cleanup/delete-s3.png)
+
 #### 6. Delete Secrets Manager & KMS Key
 1. Navigate to **Secrets Manager** → Select secret `shopsflow/production/secrets` → Actions → **Delete secret** (7-day recovery window).
 2. Navigate to **KMS** → Select key `shopsflow-kms-key` → Actions → **Schedule key deletion** (7-day window).

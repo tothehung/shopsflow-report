@@ -51,6 +51,8 @@ pre: " <b> 5.3.2 </b> "
 
 3. Click **Create load balancer**.
 
+![Bước 9: Tạo Target Group & Application Load Balancer](/images/5-Workshop/10.jpg)
+
 {{% notice note %}}
 Sao chép **DNS name** của ALB (vd: `shopsflow-alb-123456.ap-southeast-1.elb.amazonaws.com`) — bạn sẽ cần nó khi build frontend ở Mục 5.4.
 {{% /notice %}}
@@ -149,6 +151,8 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 6. Click **Create Auto Scaling group**.
 
+![Bước 10: Cấu hình Launch Template & Auto Scaling Group](/images/5-Workshop/11.jpg)
+
 ---
 
 ### 6. Xác nhận Backend hoạt động
@@ -168,5 +172,7 @@ docker logs shopsflow-backend 2>&1 | grep -i flyway
 ```
 
 Truy cập **EC2** → **Target Groups** → `shopsflow-tg` → tab **Targets** và xác nhận tất cả targets hiển thị trạng thái **Healthy**.
+
+![Kết nối EC2 qua Systems Manager Session Manager](/images/5-Workshop/5.3-S3-vpc/start-session-success.png)
 
 **Spring Boot Backend đã chạy trong cấu hình sẵn sàng cao trên hai Availability Zones, phía sau Application Load Balancer.**

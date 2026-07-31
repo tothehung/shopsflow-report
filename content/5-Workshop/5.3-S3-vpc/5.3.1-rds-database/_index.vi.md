@@ -72,6 +72,8 @@ Trước khi tạo RDS instance, bạn phải xác định các subnets mà nó 
 
 11. Click **Create database**.
 
+![Bước 7: Khởi tạo CSDL RDS PostgreSQL Multi-AZ](/images/5-Workshop/8.jpg)
+
 {{% notice info %}}
 Quá trình khởi tạo RDS mất khoảng **5–10 phút**. Trạng thái sẽ chuyển từ _Creating_ → _Backing-up_ → _Available_. Không tiếp tục bước tiếp theo cho đến khi trạng thái là **Available**.
 {{% /notice %}}
@@ -110,5 +112,7 @@ Lưu lại giá trị này — bạn sẽ dùng nó trong User Data script ở b
 4. Tại mục **Encryption key**: Chọn **KMS Customer Managed Key** đã tạo trước đó (`shopsflow-kms-key`).
 5. Secret name: `shopsflow/production/secrets`
 6. Click **Store**.
+
+![Bước 8: Lưu thông tin mật mã vào Secrets Manager](/images/5-Workshop/9.jpg)
 
 **Kết quả:** Toàn bộ thông tin nhạy cảm đã được lưu mã hóa. EC2 Backend sẽ lấy chúng khi khởi động qua API `aws secretsmanager get-secret-value` với quyền IAM của `ShopsflowEC2Role`.

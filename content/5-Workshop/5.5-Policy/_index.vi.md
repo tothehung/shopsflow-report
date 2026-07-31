@@ -14,6 +14,8 @@ Bài viết này hướng dẫn cấu hình giám sát tập trung qua **Amazon 
 
 Các máy chủ EC2 tự động cài đặt và khởi chạy CloudWatch Agent thông qua User Data script để thu thập log container Docker và metrics hệ thống.
 
+![Sơ đồ Kiến trúc Giám sát CloudWatch & Gateway VPC Endpoint Backup](/images/5-Workshop/5.5-Policy/VPCEndpointPolicyDiagram.png)
+
 #### Cài đặt và kích hoạt CloudWatch Agent
 ```bash
 # Kết nối EC2 qua Session Manager hoặc SSH
@@ -38,6 +40,8 @@ sudo systemctl enable amazon-cloudwatch-agent
 1. **Metric:** `RDS` → `Per-Database Metrics` → Chọn `FreeStorageSpace` của `shopsflow-postgres`.
 2. **Threshold:** Less than `2 GB` (2,147,483,648 bytes).
 3. **Action:** Gửi thông báo đến SNS Topic `shopsflow-alerts`.
+
+![Bước 14: Cấu hình Alarms và Dashboards Giám sát CloudWatch](/images/5-Workshop/15.jpg)
 
 #### Alarm 3: Cảnh báo chi phí AWS (`shopsflow-billing-alert`)
 1. **Metric:** `Billing` → `EstimatedCharges` → Currency: `USD`.
