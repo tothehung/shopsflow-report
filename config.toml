@@ -1,6 +1,6 @@
 baseURL = "https://tothehung.github.io/shopsflow-report/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo

@@ -37,7 +37,7 @@ Dự án áp dụng các dịch vụ cốt lõi của AWS bao gồm: **VPC**, **
 
 Dưới đây là sơ đồ kiến trúc mô tả cấu trúc phân tầng và luồng dữ liệu của ứng dụng Shopsflow triển khai trên AWS:
 
-![Architecture Diagram](/images/5-Workshop/5.1-Workshop-overview/diagram1.jpg)
+![Architecture Diagram](/images/5-Workshop/5.1-Workshop-overview/diagram.png)
 
 #### Lựa chọn dịch vụ (Service Selection Rationale)
 

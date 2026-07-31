@@ -43,7 +43,7 @@ The **Shopsflow on AWS** project addresses these challenges through:
 
 Shopsflow follows a standard 3-Tier Enterprise Cloud Architecture deployed inside an AWS Custom VPC Multi-AZ topology:
 
-![Shopsflow AWS Cloud Architecture](/images/2-Proposal/architecture.png)
+![Shopsflow AWS Cloud Architecture](/images/2-Proposal/diagram.png)
 
 #### AWS Services Used:
 - **Amazon EC2**: Hosts web applications (Nginx Frontend & Spring Boot Backend) in Public/Private Subnets.

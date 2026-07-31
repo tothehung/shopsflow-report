@@ -37,7 +37,7 @@ The project utilizes core AWS services including: **VPC**, **EC2**, **RDS**, **C
 
 The diagram below illustrates the multi-tier architecture and data flow of the Shopsflow system on AWS:
 
-![Architecture Diagram](/images/5-Workshop/5.1-Workshop-overview/diagram1.jpg)
+![Architecture Diagram](/images/5-Workshop/5.1-Workshop-overview/diagram.png)
 
 #### Service Selection Rationale
 

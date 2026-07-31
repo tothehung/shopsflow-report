@@ -43,7 +43,7 @@ Dự án **Shopsflow on AWS** giải quyết triệt để các vấn đề trê
 
 Hệ thống Shopsflow được thiết kế theo mô hình kiến trúc chuẩn 3 lớp (3-Tier Architecture) trên mạng ảo AWS Custom VPC Multi-AZ:
 
-![Sơ đồ Kiến trúc Hạ tầng Shopsflow trên AWS](/images/2-Proposal/architecture.png)
+![Sơ đồ Kiến trúc Hạ tầng Shopsflow trên AWS](/images/2-Proposal/diagram.png)
 
 #### Dịch vụ AWS sử dụng:
 - **Amazon EC2**: Chạy ứng dụng web (Nginx Frontend & Spring Boot Backend) trong Public/Private Subnets.
