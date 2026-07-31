@@ -14,19 +14,19 @@ pre: " <b> 5.3.2 </b> "
 
 1. Truy cập **EC2** → **Target Groups** → **Create target group**.
 
-| Trường | Giá trị |
-|---|---|
-| Target type | Instances |
-| Target group name | `shopsflow-tg` |
-| Protocol | HTTP |
-| Port | `8080` |
-| VPC | `shopsflow-vpc` |
-| Health check protocol | HTTP |
-| Health check path | `/actuator/health` |
-| Healthy threshold | `2` |
-| Unhealthy threshold | `3` |
-| Timeout | `5 giây` |
-| Interval | `30 giây` |
+| Trường                | Giá trị            |
+| --------------------- | ------------------ |
+| Target type           | Instances          |
+| Target group name     | `shopsflow-tg`     |
+| Protocol              | HTTP               |
+| Port                  | `8080`             |
+| VPC                   | `shopsflow-vpc`    |
+| Health check protocol | HTTP               |
+| Health check path     | `/actuator/health` |
+| Healthy threshold     | `2`                |
+| Unhealthy threshold   | `3`                |
+| Timeout               | `5 giây`           |
+| Interval              | `30 giây`          |
 
 2. Click **Next** → **Create target group** (chưa đăng ký instance nào).
 
@@ -36,18 +36,18 @@ pre: " <b> 5.3.2 </b> "
 
 1. Truy cập **EC2** → **Load Balancers** → **Create load balancer** → **Application Load Balancer**.
 
-| Trường | Giá trị |
-|---|---|
-| Name | `shopsflow-alb` |
-| Scheme | Internet-facing |
-| IP address type | IPv4 |
-| VPC | `shopsflow-vpc` |
-| Subnets | `shopsflow-public-1` (AZ-a), `shopsflow-public-2` (AZ-b) |
-| Security groups | `shopsflow-alb-sg` |
+| Trường          | Giá trị                                                  |
+| --------------- | -------------------------------------------------------- |
+| Name            | `shopsflow-alb`                                          |
+| Scheme          | Internet-facing                                          |
+| IP address type | IPv4                                                     |
+| VPC             | `shopsflow-vpc`                                          |
+| Subnets         | `shopsflow-public-1` (AZ-a), `shopsflow-public-2` (AZ-b) |
+| Security groups | `shopsflow-alb-sg`                                       |
 
 2. Tại mục **Listeners**:
-   * Thêm listener: Protocol `HTTP`, Port `80`
-   * Default action: Forward to `shopsflow-tg`
+   - Thêm listener: Protocol `HTTP`, Port `80`
+   - Default action: Forward to `shopsflow-tg`
 
 3. Click **Create load balancer**.
 
@@ -110,14 +110,14 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 1. Truy cập **EC2** → **Launch Templates** → **Create launch template**.
 
-| Trường | Giá trị |
-|---|---|
-| Name | `shopsflow-lt` |
-| AMI | Amazon Linux 2023 (mới nhất) |
-| Instance type | `t3.small` |
-| Key pair | SSH key pair của bạn |
-| Security groups | `shopsflow-ec2-sg` |
-| IAM instance profile | `ShopsflowEC2Role` |
+| Trường               | Giá trị                      |
+| -------------------- | ---------------------------- |
+| Name                 | `shopsflow-lt`               |
+| AMI                  | Amazon Linux 2023 (mới nhất) |
+| Instance type        | `t3.small`                   |
+| Key pair             | SSH key pair của bạn         |
+| Security groups      | `shopsflow-ec2-sg`           |
+| IAM instance profile | `ShopsflowEC2Role`           |
 
 2. Tại mục **Advanced details** → **User data**: Dán script từ Bước 3.
 3. Click **Create launch template**.
@@ -128,30 +128,28 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 1. Truy cập **EC2** → **Auto Scaling Groups** → **Create Auto Scaling group**.
 
-| Trường | Giá trị |
-|---|---|
-| Name | `shopsflow-asg` |
-| Launch template | `shopsflow-lt` |
-| VPC | `shopsflow-vpc` |
-| Subnets | `shopsflow-private-app-1`, `shopsflow-private-app-2` |
+| Trường          | Giá trị                                              |
+| --------------- | ---------------------------------------------------- |
+| Name            | `shopsflow-asg`                                      |
+| Launch template | `shopsflow-lt`                                       |
+| VPC             | `shopsflow-vpc`                                      |
+| Subnets         | `shopsflow-private-app-1`, `shopsflow-private-app-2` |
 
 2. Tại mục **Load balancing** → Attach to existing load balancer → Chọn `shopsflow-tg`.
 3. Tại mục **Health checks** → Bật ELB health checks.
 4. Tại mục **Group size**:
 
-| | Giá trị |
-|---|---|
-| Desired capacity | `2` |
-| Minimum capacity | `1` |
-| Maximum capacity | `4` |
+|                  | Giá trị |
+| ---------------- | ------- |
+| Desired capacity | `2`     |
+| Minimum capacity | `1`     |
+| Maximum capacity | `4`     |
 
 5. Tại mục **Automatic scaling** → Thêm **Target tracking scaling policy**:
-   * Metric: Average CPU utilization
-   * Target value: `60`
+   - Metric: Average CPU utilization
+   - Target value: `60`
 
 6. Click **Create Auto Scaling group**.
-
-
 
 ---
 
@@ -172,7 +170,5 @@ docker logs shopsflow-backend 2>&1 | grep -i flyway
 ```
 
 Truy cập **EC2** → **Target Groups** → `shopsflow-tg` → tab **Targets** và xác nhận tất cả targets hiển thị trạng thái **Healthy**.
-
-![Kết nối EC2 qua Systems Manager Session Manager](/images/5-Workshop/5.3-S3-vpc/start-session-success.png)
 
 **Spring Boot Backend đã chạy trong cấu hình sẵn sàng cao trên hai Availability Zones, phía sau Application Load Balancer.**

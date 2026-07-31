@@ -151,8 +151,6 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 6. Click **Create Auto Scaling group**.
 
-
-
 ---
 
 ### 6. Verify Backend Health
@@ -172,7 +170,5 @@ docker logs shopsflow-backend 2>&1 | grep -i flyway
 ```
 
 Navigate to **EC2** → **Target Groups** → `shopsflow-tg` → **Targets** tab and confirm all registered targets show status **Healthy**.
-
-![AWS Systems Manager Session Manager](/images/5-Workshop/5.3-S3-vpc/start-session-success.png)
 
 **The Spring Boot backend is now running in a highly available configuration across two Availability Zones, behind the Application Load Balancer.**

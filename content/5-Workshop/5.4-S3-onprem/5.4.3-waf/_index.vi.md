@@ -13,6 +13,7 @@ pre: " <b> 5.4.3 </b> "
 ### 1. Tại sao cần WAF cho Shopsflow?
 
 Shopsflow Storefront là ứng dụng React public-facing tiếp xúc với API backend. Nếu không có WAF:
+
 - Kẻ tấn công có thể thăm dò API tìm lỗ hổng **SQL Injection** trong các tham số tìm kiếm và lọc.
 - Bot có thể **duyệt brute-force Product ID** hoặc tấn công **credential stuffing** vào endpoint đăng nhập.
 - Input độc hại có thể **vượt qua validation** phía frontend.
@@ -32,11 +33,11 @@ AWS WAF cho CloudFront **bắt buộc phải tạo ở region US East (N. Virgin
 
 #### Cài đặt chung
 
-| Trường | Giá trị |
-|---|---|
-| Name | `shopsflow-waf` |
+| Trường        | Giá trị                         |
+| ------------- | ------------------------------- |
+| Name          | `shopsflow-waf`                 |
 | Resource type | Amazon CloudFront distributions |
-| Region | Global (CloudFront) |
+| Region        | Global (CloudFront)             |
 
 ---
 
@@ -45,11 +46,13 @@ AWS WAF cho CloudFront **bắt buộc phải tạo ở region US East (N. Virgin
 Click **Add rules** → **Add managed rule groups** → Bật 3 rule group sau:
 
 #### Rule Group 1: Common Web Exploits
+
 - **Tên:** `AWSManagedRulesCommonRuleSet`
 - **Mục đích:** Chặn các lỗ hổng web phổ biến (XSS, path traversal, HTTP flooding)
 - **Action:** Block
 
 #### Rule Group 2: Known Bad Inputs
+
 - **Tên:** `AWSManagedRulesKnownBadInputsRuleSet`
 - **Mục đích:** Chặn các request khớp với pattern exploit đã biết, như Log4SHELL
 - **Action:** Block
@@ -59,8 +62,6 @@ Click **Add rules** → **Add managed rule groups** → Bật 3 rule group sau:
 - **Name:** `AWSManagedRulesSQLiRuleSet`
 - **Purpose:** Blocks SQL injection attacks in query strings, body, headers, and URI paths
 - **Action:** Block
-
-![Bước 13: Cấu hình các bộ Managed Rule Groups trên AWS WAF Web ACL](/images/5-Workshop/14.jpg)
 
 Click **Add rules**.
 
@@ -76,8 +77,9 @@ Click **Add rules**.
 ### 5. Cấu hình CloudWatch Metrics
 
 Tại mục **Configure metrics**:
-* Web ACL metric name: `shopsflow-waf-metrics`
-* Bật sampled requests — cho phép xem các request mẫu trong WAF console để debug.
+
+- Web ACL metric name: `shopsflow-waf-metrics`
+- Bật sampled requests — cho phép xem các request mẫu trong WAF console để debug.
 
 Click **Next** → **Next** → **Create web ACL**.
 
@@ -99,6 +101,7 @@ Mất **1–2 phút** để WAF association lan truyền toàn cầu trên tất
 ### 7. Kiểm tra WAF bảo vệ
 
 #### Test 1: Chặn SQL Injection
+
 ```bash
 # Mô phỏng SQL Injection trong query parameter
 curl -I "https://dxxxxx.cloudfront.net/api/products?search=1'+OR+'1'='1"
@@ -106,6 +109,7 @@ curl -I "https://dxxxxx.cloudfront.net/api/products?search=1'+OR+'1'='1"
 ```
 
 #### Test 2: Chặn XSS
+
 ```bash
 # Mô phỏng payload XSS
 curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
@@ -113,13 +117,12 @@ curl -I "https://dxxxxx.cloudfront.net/?q=<script>alert(1)</script>"
 ```
 
 #### Test 3: Request bình thường được phép qua
+
 ```bash
 # Request duyệt sản phẩm bình thường phải thành công
 curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
 # Kết quả mong đợi: HTTP/2 200 OK
 ```
-
-![Kiểm tra AWS WAF Chặn SQLi & XSS](/images/5-Workshop/5.4-S3-onprem/result.png)
 
 ---
 
@@ -127,8 +130,8 @@ curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
 
 1. Truy cập **CloudWatch** → **Metrics** → **WAF** → `shopsflow-waf-metrics`.
 2. Theo dõi:
-   * `BlockedRequests` — số request bị chặn theo từng rule
-   * `AllowedRequests` — tổng traffic hợp lệ
-   * `CountedRequests` — request khớp với count-only rules
+   - `BlockedRequests` — số request bị chặn theo từng rule
+   - `AllowedRequests` — tổng traffic hợp lệ
+   - `CountedRequests` — request khớp với count-only rules
 
 **Frontend Shopsflow đã được bảo vệ bởi AWS WAF. Toàn bộ SQL Injection, XSS và các input độc hại đã biết đều bị tự động chặn tại CloudFront edge trước khi chạm đến ALB và Backend.**
