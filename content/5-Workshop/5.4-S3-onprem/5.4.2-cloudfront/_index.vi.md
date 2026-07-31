@@ -30,7 +30,7 @@ pre: " <b> 5.4.2 </b> "
 | Name | `shopsflow-oac` |
 | Signing behavior | Sign requests (recommended) |
 
-![Bước 12: Tạo CloudFront Distribution & Gán Origin Access Control (OAC)](/images/5-Workshop/13.jpg)
+![CloudFront distribution fe-cloudfront được tạo thành công với OAC](/images/5-Workshop/5.4-S3-onprem/cloudfront-distribution.jpg)
 
 3. Click **Create**.
 

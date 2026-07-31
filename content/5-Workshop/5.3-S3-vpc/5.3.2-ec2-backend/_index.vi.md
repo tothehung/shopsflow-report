@@ -51,7 +51,7 @@ pre: " <b> 5.3.2 </b> "
 
 3. Click **Create load balancer**.
 
-![Bước 9: Tạo Target Group & Application Load Balancer](/images/5-Workshop/10.jpg)
+![ALB shopsflow-alb được tạo thành công (Internet-facing, Active)](/images/5-Workshop/5.3-S3-vpc/alb-created.jpg)
 
 {{% notice note %}}
 Sao chép **DNS name** của ALB (vd: `shopsflow-alb-123456.ap-southeast-1.elb.amazonaws.com`) — bạn sẽ cần nó khi build frontend ở Mục 5.4.
@@ -151,7 +151,7 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 6. Click **Create Auto Scaling group**.
 
-![Bước 10: Cấu hình Launch Template & Auto Scaling Group](/images/5-Workshop/11.jpg)
+
 
 ---
 

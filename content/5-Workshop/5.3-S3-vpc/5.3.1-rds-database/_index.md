@@ -72,7 +72,7 @@ Before creating the RDS instance, you must define which subnets it can reside in
 
 11. Click **Create database**.
 
-![Step 7: RDS PostgreSQL Multi-AZ Database Provisioning](/images/5-Workshop/8.jpg)
+![RDS database-shopsflow được tạo thành công (Status: Available, PostgreSQL)](/images/5-Workshop/5.3-S3-vpc/rds-created.jpg)
 
 {{% notice info %}}
 RDS provisioning takes approximately **5–10 minutes**. The status will change from *Creating* → *Backing-up* → *Available*. Do not proceed to the next step until the status is **Available**.
@@ -113,6 +113,6 @@ Save this value — you will use it in the EC2 User Data script in the next step
 5. Secret name: `shopsflow/production/secrets`
 6. Click **Store**.
 
-![Step 8: Store Encrypted Secret Credentials in Secrets Manager](/images/5-Workshop/9.jpg)
+
 
 **Result:** All sensitive credentials are now stored encrypted. The EC2 backend will retrieve them at startup via the `aws secretsmanager get-secret-value` API, using the `ShopsflowEC2Role` IAM permissions.

@@ -51,7 +51,7 @@ In this step, you will create the **Application Load Balancer (ALB)**, an **EC2 
 
 3. Click **Create load balancer**.
 
-![Step 9: Target Group & Application Load Balancer Setup](/images/5-Workshop/10.jpg)
+![ALB shopsflow-alb được tạo thành công (Internet-facing, Active)](/images/5-Workshop/5.3-S3-vpc/alb-created.jpg)
 
 {{% notice note %}}
 Copy the **DNS name** of the ALB (e.g., `shopsflow-alb-123456.ap-southeast-1.elb.amazonaws.com`) — you will need it when building the frontend in Section 5.4.
@@ -151,7 +151,7 @@ echo "Shopsflow Backend started successfully" >> /var/log/shopsflow-init.log
 
 6. Click **Create Auto Scaling group**.
 
-![Step 10: Launch Template & Auto Scaling Group Configuration](/images/5-Workshop/11.jpg)
+
 
 ---
 

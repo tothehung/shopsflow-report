@@ -30,7 +30,7 @@ The Shopsflow network is partitioned into 6 subnets distributed across 2 Availab
    * **IPv4 CIDR block:** `10.0.0.0/16`
 3. Click **Create VPC**.
 
-![Step 1: Amazon VPC Creation](/images/5-Workshop/1.jpg)
+![VPC shopsflow-vpc được tạo thành công](/images/5-Workshop/5.3-S3-vpc/vpc-created.jpg)
 
 #### Step 2: Create Subnets
 Navigate to **VPC** → **Subnets** → **Create subnet**. Select `shopsflow-vpc`. Create 6 subnets:
@@ -44,7 +44,13 @@ Navigate to **VPC** → **Subnets** → **Create subnet**. Select `shopsflow-vpc
 | `shopsflow-private-db-1` | `10.0.5.0/24` | `ap-southeast-1a` | Private DB (RDS Primary) |
 | `shopsflow-private-db-2` | `10.0.6.0/24` | `ap-southeast-1b` | Private DB (RDS Standby) |
 
-![Step 2: Subnet List Configuration](/images/5-Workshop/2.jpg)
+![Subnet private1 us-east-1a (10.0.128.0/20)](/images/5-Workshop/5.3-S3-vpc/subnet-private1.jpg)
+
+![Subnet private2 us-east-1b (10.0.144.0/20)](/images/5-Workshop/5.3-S3-vpc/subnet-private2.jpg)
+
+![Subnet public1 us-east-1a (10.0.0.0/20)](/images/5-Workshop/5.3-S3-vpc/subnet-public1.jpg)
+
+![Subnet public2 us-east-1b (10.0.16.0/20)](/images/5-Workshop/5.3-S3-vpc/subnet-public2.jpg)
 
 #### Step 3: Create Internet Gateway (IGW) & NAT Gateway
 1. **Create Internet Gateway:**
@@ -52,7 +58,7 @@ Navigate to **VPC** → **Subnets** → **Create subnet**. Select `shopsflow-vpc
    * Name: `shopsflow-igw`. Click **Create**.
    * Actions → **Attach to VPC** → Select `shopsflow-vpc`.
 
-![Step 3: Internet Gateway Creation and Attachment](/images/5-Workshop/3.jpg)
+
 2. **Create NAT Gateway:**
    * Navigate to **NAT gateways** → **Create NAT gateway**.
    * Name: `shopsflow-nat-gw`.
@@ -60,7 +66,7 @@ Navigate to **VPC** → **Subnets** → **Create subnet**. Select `shopsflow-vpc
    * **Elastic IP allocation ID:** Click **Allocate Elastic IP** to assign a static public IP for the NAT gateway.
    * Click **Create NAT gateway** and wait for the status to transition to *Available*.
 
-![Step 3.2: NAT Gateway Creation with Elastic IP](/images/5-Workshop/4.jpg)
+
 
 #### Step 4: Configure Route Tables
 1. **Public Route Table (`shopsflow-public-rt`):**
@@ -73,7 +79,7 @@ Navigate to **VPC** → **Subnets** → **Create subnet**. Select `shopsflow-vpc
    * No route to the Internet (fully isolated).
    * Associations: `shopsflow-private-db-1`, `shopsflow-private-db-2`.
 
-![Step 4: Route Table Configuration](/images/5-Workshop/5.jpg)
+
 
 ---
 
@@ -108,7 +114,13 @@ Create 3 Security Groups for chained traffic control:
 3. **RDS Security Group (`shopsflow-rds-sg`):**
    * Inbound: `PostgreSQL` (Port 5432) from `shopsflow-ec2-sg` (accept queries from EC2 only).
 
-![Step 5: Security Groups Tiering Setup](/images/5-Workshop/6.jpg)
+![Danh sách các Security Group (alb-sg, ecs-sg, rds-sg)](/images/5-Workshop/5.3-S3-vpc/sg-list.jpg)
+
+![ALB Security Group - Inbound rules port 80 và 443](/images/5-Workshop/5.3-S3-vpc/sg-alb.jpg)
+
+![ECS Security Group - Inbound rule port 8080](/images/5-Workshop/5.3-S3-vpc/sg-ecs.jpg)
+
+![RDS Security Group - Inbound rule port 5432](/images/5-Workshop/5.3-S3-vpc/sg-rds.jpg)
 
 ---
 
@@ -135,5 +147,3 @@ Create 3 Security Groups for chained traffic control:
    }
    ```
 4. Role name: `ShopsflowEC2Role`. Click **Create role**.
-
-![Step 6: IAM Role Setup for EC2 Backend](/images/5-Workshop/7.jpg)

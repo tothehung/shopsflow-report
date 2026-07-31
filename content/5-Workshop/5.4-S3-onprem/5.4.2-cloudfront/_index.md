@@ -30,7 +30,7 @@ In this step, you will create an **Amazon CloudFront** distribution to serve sta
 | Name | `shopsflow-oac` |
 | Signing behavior | Sign requests (recommended) |
 
-![Step 12: CloudFront Distribution & Origin Access Control (OAC) Setup](/images/5-Workshop/13.jpg)
+![CloudFront distribution fe-cloudfront được tạo thành công với OAC](/images/5-Workshop/5.4-S3-onprem/cloudfront-distribution.jpg)
 
 3. Click **Create**.
 

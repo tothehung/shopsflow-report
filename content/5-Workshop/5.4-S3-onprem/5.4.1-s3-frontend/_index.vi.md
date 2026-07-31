@@ -55,7 +55,7 @@ dist/
 
 2. Click **Create bucket**.
 
-![Bước 11: Tạo S3 Static Hosting Bucket & Đồng bộ Build Files](/images/5-Workshop/12.jpg)
+![S3 bucket shopsflow-fe với các file đã được upload thành công](/images/5-Workshop/5.4-S3-onprem/s3-files-uploaded.jpg)
 
 {{% notice note %}}
 **Không** bật "Static website hosting" trên S3 bucket — CloudFront sẽ dùng **Origin Access Control (OAC)** để lấy nội dung từ S3 qua kết nối riêng tư. Không cần public website hosting.
