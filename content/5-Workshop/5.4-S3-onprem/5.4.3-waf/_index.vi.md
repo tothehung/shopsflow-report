@@ -74,7 +74,7 @@ Click **Add rules**.
 
 Tại mục **Configure metrics**:
 * Web ACL metric name: `shopsflow-waf-metrics`
-* ✅ Bật sampled requests — cho phép xem các request mẫu trong WAF console để debug.
+* Bật sampled requests — cho phép xem các request mẫu trong WAF console để debug.
 
 Click **Next** → **Next** → **Create web ACL**.
 
@@ -126,4 +126,4 @@ curl -I "https://dxxxxx.cloudfront.net/api/products?page=1&size=10"
    * `AllowedRequests` — tổng traffic hợp lệ
    * `CountedRequests` — request khớp với count-only rules
 
-✅ **Frontend Shopsflow đã được bảo vệ bởi AWS WAF. Toàn bộ SQL Injection, XSS và các input độc hại đã biết đều bị tự động chặn tại CloudFront edge trước khi chạm đến ALB và Backend.**
+**Frontend Shopsflow đã được bảo vệ bởi AWS WAF. Toàn bộ SQL Injection, XSS và các input độc hại đã biết đều bị tự động chặn tại CloudFront edge trước khi chạm đến ALB và Backend.**

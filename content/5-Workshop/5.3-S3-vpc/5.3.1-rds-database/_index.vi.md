@@ -17,13 +17,13 @@ Trước khi tạo RDS instance, bạn phải xác định các subnets mà nó 
 1. Truy cập **AWS Console** → **RDS** → **Subnet groups** → **Create DB subnet group**.
 2. Điền thông tin:
 
-| Trường | Giá trị |
-|---|---|
-| Name | `shopsflow-db-subnet-group` |
-| Description | Private DB subnets for Shopsflow RDS |
-| VPC | `shopsflow-vpc` |
-| Availability Zones | `ap-southeast-1a`, `ap-southeast-1b` |
-| Subnets | `shopsflow-private-db-1`, `shopsflow-private-db-2` |
+| Trường             | Giá trị                                            |
+| ------------------ | -------------------------------------------------- |
+| Name               | `shopsflow-db-subnet-group`                        |
+| Description        | Private DB subnets for Shopsflow RDS               |
+| VPC                | `shopsflow-vpc`                                    |
+| Availability Zones | `ap-southeast-1a`, `ap-southeast-1b`               |
+| Subnets            | `shopsflow-private-db-1`, `shopsflow-private-db-2` |
 
 3. Click **Create**.
 
@@ -38,42 +38,42 @@ Trước khi tạo RDS instance, bạn phải xác định các subnets mà nó 
 
 5. Tại mục **Settings**:
 
-| Trường | Giá trị |
-|---|---|
+| Trường                 | Giá trị              |
+| ---------------------- | -------------------- |
 | DB instance identifier | `shopsflow-postgres` |
-| Master username | `shopsflow_admin` |
-| Master password | `ShopsflowPass123!` |
+| Master username        | `shopsflow_admin`    |
+| Master password        | `ShopsflowPass123!`  |
 
-> ⚠️ Mật khẩu này sẽ được lưu vào **AWS Secrets Manager** ở bước sau — không đặt trực tiếp vào code ứng dụng.
+> Mật khẩu này sẽ được lưu vào **AWS Secrets Manager** ở bước sau — không đặt trực tiếp vào code ứng dụng.
 
 6. Tại mục **Instance configuration**:
-   * DB instance class: `db.t3.micro`
+   - DB instance class: `db.t3.micro`
 
 7. Tại mục **Availability & durability**:
-   * ✅ **Multi-AZ DB instance** — tạo bản dự phòng đồng bộ ở AZ thứ hai để failover tự động.
+   - **Multi-AZ DB instance** — tạo bản dự phòng đồng bộ ở AZ thứ hai để failover tự động.
 
 8. Tại mục **Storage**:
-   * Storage type: `gp3`
-   * Allocated storage: `20 GiB`
+   - Storage type: `gp3`
+   - Allocated storage: `20 GiB`
 
 9. Tại mục **Connectivity**:
 
-| Trường | Giá trị |
-|---|---|
-| VPC | `shopsflow-vpc` |
-| DB Subnet Group | `shopsflow-db-subnet-group` |
-| Public access | ❌ **No** |
-| VPC security group | `shopsflow-rds-sg` |
+| Trường             | Giá trị                     |
+| ------------------ | --------------------------- |
+| VPC                | `shopsflow-vpc`             |
+| DB Subnet Group    | `shopsflow-db-subnet-group` |
+| Public access      | **No**                      |
+| VPC security group | `shopsflow-rds-sg`          |
 
 10. Tại mục **Additional configuration**:
-    * Initial database name: `shopsflow`
-    * ✅ Bật automated backups
-    * Backup retention period: **7 ngày**
+    - Initial database name: `shopsflow`
+    - Bật automated backups
+    - Backup retention period: **7 ngày**
 
 11. Click **Create database**.
 
 {{% notice info %}}
-Quá trình khởi tạo RDS mất khoảng **5–10 phút**. Trạng thái sẽ chuyển từ *Creating* → *Backing-up* → *Available*. Không tiếp tục bước tiếp theo cho đến khi trạng thái là **Available**.
+Quá trình khởi tạo RDS mất khoảng **5–10 phút**. Trạng thái sẽ chuyển từ _Creating_ → _Backing-up_ → _Available_. Không tiếp tục bước tiếp theo cho đến khi trạng thái là **Available**.
 {{% /notice %}}
 
 ---
@@ -99,16 +99,16 @@ Lưu lại giá trị này — bạn sẽ dùng nó trong User Data script ở b
 2. Chọn **Other type of secret**.
 3. Thêm các key–value:
 
-| Key | Value |
-|---|---|
-| `SPRING_DATASOURCE_URL` | `jdbc:postgresql://<RDS_ENDPOINT>:5432/shopsflow` |
-| `SPRING_DATASOURCE_USERNAME` | `shopsflow_admin` |
-| `SPRING_DATASOURCE_PASSWORD` | `ShopsflowPass123!` |
-| `JWT_SECRET` | *(tạo chuỗi ngẫu nhiên 64 ký tự)* |
-| `VNPAY_HASH_SECRET` | *(hash secret VNPay Sandbox của bạn)* |
+| Key                          | Value                                             |
+| ---------------------------- | ------------------------------------------------- |
+| `SPRING_DATASOURCE_URL`      | `jdbc:postgresql://<RDS_ENDPOINT>:5432/shopsflow` |
+| `SPRING_DATASOURCE_USERNAME` | `shopsflow_admin`                                 |
+| `SPRING_DATASOURCE_PASSWORD` | `ShopsflowPass123!`                               |
+| `JWT_SECRET`                 | _(tạo chuỗi ngẫu nhiên 64 ký tự)_                 |
+| `VNPAY_HASH_SECRET`          | _(hash secret VNPay Sandbox của bạn)_             |
 
 4. Tại mục **Encryption key**: Chọn **KMS Customer Managed Key** đã tạo trước đó (`shopsflow-kms-key`).
 5. Secret name: `shopsflow/production/secrets`
 6. Click **Store**.
 
-✅ **Kết quả:** Toàn bộ thông tin nhạy cảm đã được lưu mã hóa. EC2 Backend sẽ lấy chúng khi khởi động qua API `aws secretsmanager get-secret-value` với quyền IAM của `ShopsflowEC2Role`.
+**Kết quả:** Toàn bộ thông tin nhạy cảm đã được lưu mã hóa. EC2 Backend sẽ lấy chúng khi khởi động qua API `aws secretsmanager get-secret-value` với quyền IAM của `ShopsflowEC2Role`.

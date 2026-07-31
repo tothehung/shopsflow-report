@@ -50,7 +50,7 @@ dist/
 |---|---|
 | Bucket name | `shopsflow-frontend-<your-account-id>` |
 | AWS Region | `ap-southeast-1` |
-| Block all public access | ✅ **Bật** (CloudFront dùng OAC — không cần public access trực tiếp) |
+| Block all public access | **Bật** (CloudFront dùng OAC — không cần public access trực tiếp) |
 | Bucket versioning | Tắt |
 
 2. Click **Create bucket**.
@@ -81,4 +81,4 @@ Kết quả mong đợi:
 2026-06-15 10:00:00     24.1 KiB assets/index-xxxxxxxx.css
 ```
 
-✅ **Toàn bộ file frontend đã được lưu trên S3 và sẵn sàng phân phối qua CloudFront.**
+**Toàn bộ file frontend đã được lưu trên S3 và sẵn sàng phân phối qua CloudFront.**

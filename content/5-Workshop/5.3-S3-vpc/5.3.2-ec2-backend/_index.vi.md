@@ -169,4 +169,4 @@ docker logs shopsflow-backend 2>&1 | grep -i flyway
 
 Truy cập **EC2** → **Target Groups** → `shopsflow-tg` → tab **Targets** và xác nhận tất cả targets hiển thị trạng thái **Healthy**.
 
-✅ **Spring Boot Backend đã chạy trong cấu hình sẵn sàng cao trên hai Availability Zones, phía sau Application Load Balancer.**
+**Spring Boot Backend đã chạy trong cấu hình sẵn sàng cao trên hai Availability Zones, phía sau Application Load Balancer.**

@@ -50,7 +50,7 @@ Before creating the RDS instance, you must define which subnets it can reside in
    * DB instance class: `db.t3.micro`
 
 7. Under **Availability & durability**:
-   * ✅ **Multi-AZ DB instance** — creates a synchronous standby in a second AZ for failover.
+   * **Multi-AZ DB instance** — creates a synchronous standby in a second AZ for failover.
 
 8. Under **Storage**:
    * Storage type: `gp3`
@@ -62,12 +62,12 @@ Before creating the RDS instance, you must define which subnets it can reside in
 |---|---|
 | VPC | `shopsflow-vpc` |
 | DB Subnet Group | `shopsflow-db-subnet-group` |
-| Public access | ❌ **No** |
+| Public access | **No** |
 | VPC security group | `shopsflow-rds-sg` |
 
 10. Under **Additional configuration**:
     * Initial database name: `shopsflow`
-    * ✅ Enable automated backups
+    * Enable automated backups
     * Backup retention period: **7 days**
 
 11. Click **Create database**.
@@ -111,4 +111,4 @@ Save this value — you will use it in the EC2 User Data script in the next step
 5. Secret name: `shopsflow/production/secrets`
 6. Click **Store**.
 
-✅ **Result:** All sensitive credentials are now stored encrypted. The EC2 backend will retrieve them at startup via the `aws secretsmanager get-secret-value` API, using the `ShopsflowEC2Role` IAM permissions.
+**Result:** All sensitive credentials are now stored encrypted. The EC2 backend will retrieve them at startup via the `aws secretsmanager get-secret-value` API, using the `ShopsflowEC2Role` IAM permissions.
