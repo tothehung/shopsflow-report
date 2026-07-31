@@ -23,5 +23,5 @@ Dưới đây là các liên kết tham khảo chính thức bao gồm trang web
 ---
 
 ### 3. Kho lưu trữ Mã nguồn (Git Repository)
-- **URL:** [https://github.com/tothehung/shopsflow2.git](https://github.com/tothehung/shopsflow2.git)
+- **URL:** [https://github.com/nhanhoanghenrykaka/FCAJ-WORKSHOP](https://github.com/nhanhoanghenrykaka/FCAJ-WORKSHOP)
 - **Mô tả:** Repository chứa toàn bộ mã nguồn ứng dụng Spring Boot Backend, giao diện React Frontend, các tệp cấu hình Docker, script chuyển đổi dữ liệu Flyway và tài liệu hướng dẫn triển khai.

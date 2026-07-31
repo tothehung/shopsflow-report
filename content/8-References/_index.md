@@ -23,5 +23,5 @@ Below are the official reference links, live product URL, demonstration video, a
 ---
 
 ### 3. Source Code Repository (Git Repo)
-- **URL:** [https://github.com/tothehung/shopsflow2.git](https://github.com/tothehung/shopsflow2.git)
+- **URL:** [https://github.com/nhanhoanghenrykaka/FCAJ-WORKSHOP](https://github.com/nhanhoanghenrykaka/FCAJ-WORKSHOP)
 - **Description:** Complete open-source repository containing Spring Boot backend API code, React frontend application source, Docker configuration files, Flyway migration scripts, and AWS deployment guides.
