@@ -14,8 +14,6 @@ In this step, you will create an **Amazon CloudFront** distribution to serve sta
 
 1. Navigate to **AWS Console** → **CloudFront** → **Create distribution**.
 
-![CloudFront CDN & S3 OAC Architecture](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
-
 #### Origin Settings (S3 Frontend)
 
 | Field | Value |
@@ -29,8 +27,6 @@ In this step, you will create an **Amazon CloudFront** distribution to serve sta
 |---|---|
 | Name | `shopsflow-oac` |
 | Signing behavior | Sign requests (recommended) |
-
-![CloudFront distribution fe-cloudfront được tạo thành công với OAC](/images/5-Workshop/5.4-S3-onprem/cloudfront-distribution.jpg)
 
 3. Click **Create**.
 

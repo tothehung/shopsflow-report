@@ -14,8 +14,6 @@ pre: " <b> 5.4.2 </b> "
 
 1. Truy cập **AWS Console** → **CloudFront** → **Create distribution**.
 
-![Kiến trúc CloudFront CDN & S3 OAC](/images/5-Workshop/5.4-S3-onprem/diagram3.png)
-
 #### Cấu hình Origin (S3 Frontend)
 
 | Trường | Giá trị |
@@ -29,8 +27,6 @@ pre: " <b> 5.4.2 </b> "
 |---|---|
 | Name | `shopsflow-oac` |
 | Signing behavior | Sign requests (recommended) |
-
-![CloudFront distribution fe-cloudfront được tạo thành công với OAC](/images/5-Workshop/5.4-S3-onprem/cloudfront-distribution.jpg)
 
 3. Click **Create**.
 
