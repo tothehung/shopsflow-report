@@ -8,6 +8,7 @@ chapter: false
 # Internship Report
 
 ### Student Information:
+
 &emsp; **Full Name:** To The Hung
 
 &emsp; **Phone Number:** 0931466918
@@ -26,7 +27,7 @@ chapter: false
 
 &emsp; **Internship Period:** From June 01, 2026 to August 14, 2026
 
-![Your Avatar](/images/avatar.png)
+![Your Avatar](/images/avatar.jpg)
 
 ### Report Content
 
