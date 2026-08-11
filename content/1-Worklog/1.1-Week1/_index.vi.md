@@ -24,7 +24,7 @@ pre: " <b> 1.1. </b> "
 | 5 | Thực hành bài Lab AWS: Khởi tạo tài khoản AWS Free Tier, kích hoạt bảo mật đa yếu tố MFA cho Root Account, cài đặt AWS CLI v2 và cấu hình AWS Vault lưu credentials an toàn. |
 | 6 | Tạo IAM User có quyền Admin giới hạn, thiết lập CloudWatch Billing Alarm gửi email cảnh báo khi chi phí vượt hạn mức và tổng hợp báo cáo thu hoạch tuần 1. |
 
-### Kết quả đạt me tuần 1:
+### Kết quả đạt được tuần 1:
 * Hoàn thành đúng tiến độ công việc tuần 1 (Onboarding & AWS Fundamentals).
 * Nắm vững kiến trúc IAM, biết cách phân quyền an toàn và làm chủ công cụ thao tác AWS CLI v2.
 

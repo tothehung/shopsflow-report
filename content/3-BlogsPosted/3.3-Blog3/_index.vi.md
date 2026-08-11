@@ -65,4 +65,4 @@ Làm việc trên Cloud không chỉ là việc lắp ghép các dịch vụ the
 Hi vọng những chia sẻ thực tế này sẽ giúp mọi người tránh được những sự cố "vô hình" và tối ưu hệ thống tốt hơn. Nếu anh em từng gặp phải những trường hợp oái ăm nào khác trên AWS, hãy để lại comment để anh em cùng thảo luận.
 
 📌 **Link bài viết đăng trên Facebook Community:**  
-*(Đang cập nhật link bài đăng sau khi bài viết được duyệt...)*
+[https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230167921081501/?rdid=OWE359AjcB0vTUf2#](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230167921081501/?rdid=OWE359AjcB0vTUf2#)
