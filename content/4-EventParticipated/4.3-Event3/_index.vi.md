@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 3"
 date: 2026-07-25
 weight: 3
@@ -108,7 +108,7 @@ pre: " <b> 4.3. </b> "
 
 ### Trải Nghiệm & Thu Hoạch Cá Nhân
 
-Theo dõi và học hỏi từ sự kiện **“FCAJ x Agentic AI Build Week: Show Up. Build. Pitch. WIN!”** mang lại cho tôi những bài học thực chiến vô cùng đắt giá và nguồn năng lượng sục sôi về tinh thần làm chủ công nghệ.
+Theo dõi và học hỏi từ sự kiện **“FCAJ x Agentic AI Build Week: Show Up. Build. Pitch. WIN!”** mang lại cho em những bài học thực chiến vô cùng đắt giá và nguồn năng lượng sục sôi về tinh thần làm chủ công nghệ.
 
 #### Lắng nghe chia sẻ từ các Chuyên gia & Đội thi
 - Thấu hiểu định hướng tầm nhìn từ Mr. Joseph Marazota về tốc độ thay đổi kỷ nguyên AI và vai trò quyết định của thế hệ trẻ trong việc định hình lại toàn bộ các ngành công nghiệp.

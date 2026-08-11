@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 2"
 date: 2026-07-11
 weight: 2
@@ -123,7 +123,7 @@ Tham gia sự kiện ngày 11/7 mang lại nhiều kiến thức thực chiến 
 
 ---
 
-> **Tổng kết:** Sự kiện giúp tôi trang bị cả tư duy kỹ thuật thực chiến (Security AI, Observability) lẫn lộ trình phát triển sự nghiệp cá nhân (AWS Certification), tạo nền tảng vững chắc để phát triển trở thành một Cloud / DevSecOps Engineer chuyên nghiệp.
+> **Tổng kết:** Sự kiện giúp em trang bị cả tư duy kỹ thuật thực chiến (Security AI, Observability) lẫn lộ trình phát triển sự nghiệp cá nhân (AWS Certification), tạo nền tảng vững chắc để phát triển trở thành một Cloud / DevSecOps Engineer chuyên nghiệp.
 
 ---
 

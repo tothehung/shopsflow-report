@@ -1,4 +1,4 @@
----
+﻿---
 title: "Tự đánh giá"
 date: 2026-06-01
 weight: 6
@@ -6,11 +6,11 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong suốt thời gian thực tập 9 tuần tại chương trình **First Cloud Journey (FCJ)** từ ngày **01/06/2026** đến ngày **01/08/2026**, tôi đã có cơ hội học hỏi, rèn luyện kỹ năng chuyên môn Cloud & DevOps và trực tiếp ứng dụng kiến thức đã học vào dự án thực tế **Shopsflow — Full-Stack E-Commerce Application on AWS**.
+Trong suốt thời gian thực tập 9 tuần tại chương trình **First Cloud Journey (FCJ)** từ ngày **01/06/2026** đến ngày **01/08/2026**, em đã có cơ hội học hỏi, rèn luyện kỹ năng chuyên môn Cloud & DevOps và trực tiếp ứng dụng kiến thức đã học vào dự án thực tế **Shopsflow — Full-Stack E-Commerce Application on AWS**.
 
-Tôi đã tham gia nghiên cứu chuyên sâu các dịch vụ AWS (EC2, RDS PostgreSQL, ElastiCache Redis, CloudWatch, Secrets Manager, Bedrock API), đóng gói ứng dụng React 19 / Spring Boot 21 bằng Docker Compose, tích hợp cổng thanh toán VNPay Sandbox, thực hiện tự động hóa hạ tầng và soạn thảo toàn bộ báo cáo thực tập.
+Em đã tham gia nghiên cứu chuyên sâu các dịch vụ AWS (EC2, RDS PostgreSQL, ElastiCache Redis, CloudWatch, Secrets Manager, Bedrock API), đóng gói ứng dụng React 19 / Spring Boot 21 bằng Docker Compose, tích hợp cổng thanh toán VNPay Sandbox, thực hiện tự động hóa hạ tầng và soạn thảo toàn bộ báo cáo thực tập.
 
-Để phản ánh một cách khách quan quá trình thực tập 9 tuần, tôi xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
+Để phản ánh một cách khách quan quá trình thực tập 9 tuần, em xin tự đánh giá bản thân dựa trên các tiêu chí dưới đây:
 
 | STT | Tiêu chí | Mô tả | Tốt | Khá | Trung bình |
 | --- | --- | --- | --- | --- | --- |

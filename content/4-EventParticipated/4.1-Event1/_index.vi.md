@@ -1,4 +1,4 @@
----
+﻿---
 title: "Event 1"
 date: 2026-06-15
 weight: 1
@@ -114,7 +114,7 @@ Tham dự sự kiện Study Tour **“AWS: Enterprise Cloud Architectures and In
 
 ---
 
-> **Tóm tắt:** Sự kiện không chỉ trang bị kiến thức kiến trúc kỹ thuật chuẩn doanh nghiệp mà còn tái định hình tư duy sự nghiệp của tôi, giúp tôi chuẩn bị hiệu quả cho chặng đường trở thành một Kỹ sư Cloud / Data / DevOps chuyên nghiệp trong tương lai.
+> **Tóm tắt:** Sự kiện không chỉ trang bị kiến thức kiến trúc kỹ thuật chuẩn doanh nghiệp mà còn tái định hình tư duy sự nghiệp của em, giúp em chuẩn bị hiệu quả cho chặng đường trở thành một Kỹ sư Cloud / Data / DevOps chuyên nghiệp trong tương lai.
 
 ---
 
