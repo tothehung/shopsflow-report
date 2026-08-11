@@ -73,8 +73,27 @@ Hệ thống Shopsflow được thiết kế theo mô hình kiến trúc chuẩn
 
 ### 5. Ước tính Ngân sách (Budget Estimation)
 
-- **AWS Free Tier Coverage**: Hầu hết các dịch vụ (EC2 t3.micro/t2.micro, S3 5GB, CloudWatch 5GB Logs) đều nằm trong hạn mức Free Tier dành cho bài lab thực tập.
-- **Quản lý chi phí**: Đặt CloudWatch Billing Alarm nhận thông báo email ngay khi chi phí chạm mốc $5 USD, tự động dọn dẹp tài nguyên sau khi nghiệm thu (FinOps Best Practices).
+Bảng ước tính chi phí dưới đây được tính dựa trên bảng giá **AWS Singapore Region (`ap-southeast-1`)** cho một hệ thống Shopsflow chuẩn Production. Tất cả chi phí được tính theo tháng cho cấu hình chạy 24/7.
+
+| Dịch vụ AWS | Cấu hình | Chi phí ước tính (USD/tháng) |
+|---|---|---|
+| **Amazon EC2** (Backend) | 2× `t3.micro` trong ASG (Private Subnet) | ~$15.18 |
+| **Amazon RDS PostgreSQL** | `db.t3.micro` Multi-AZ, 20GB GP3 storage | ~$28.62 |
+| **Application Load Balancer** | 1 ALB (~10 LCU/tháng) | ~$10.08 |
+| **Amazon CloudFront** | 10GB data transfer out, 1 triệu requests | ~$1.20 |
+| **Amazon S3** | Frontend static assets + DB backups ~5GB | ~$0.23 |
+| **NAT Gateway** | 1 NAT GW + ~10GB data processed | ~$5.40 |
+| **AWS Secrets Manager** | 3 secrets × $0.40 | ~$1.20 |
+| **Amazon CloudWatch** | Custom metrics + 5GB logs + 3 Alarms | ~$3.50 |
+| **AWS WAF** | 1 Web ACL + 10 triệu requests | ~$6.00 |
+| **AWS KMS** | 1 CMK key + 10K API calls | ~$1.03 |
+| **Tổng ước tính** | | **~$72.44 / tháng** |
+
+> **💡 Lưu ý AWS Free Tier:** Trong phạm vi bài thực tập và demo, hầu hết các dịch vụ đều nằm trong hạn mức AWS Free Tier (EC2 `t2.micro` 750 giờ/tháng, S3 5GB, CloudWatch 5GB logs, 10 alarms). Chi phí thực tế ước tính cho tài khoản ngoài Free Tier là khoảng **$72.44/tháng**.
+
+- **Quản lý chi phí:** Đặt CloudWatch Billing Alarm nhận thông báo email ngay khi chi phí ước tính vượt mốc **$5 USD**, đồng thời tự động dọn dẹp toàn bộ tài nguyên sau khi nghiệm thu (FinOps Best Practices).
+
+
 
 ---
 

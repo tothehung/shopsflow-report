@@ -73,8 +73,27 @@ Shopsflow follows a standard 3-Tier Enterprise Cloud Architecture deployed insid
 
 ### 5. Budget Estimation
 
-- **AWS Free Tier Coverage**: Most services (EC2 t3.micro, S3 5GB, CloudWatch 5GB Logs) operate within Free Tier limits for lab demonstration.
-- **Cost Controls**: CloudWatch Billing Alarms notify email immediately if expenses reach $5 USD, with resource cleanup executed post-evaluation (FinOps Best Practices).
+The following cost estimates are based on **AWS Singapore Region (`ap-southeast-1`)** pricing for a production-grade Shopsflow deployment. All costs are calculated on a monthly basis for a single-AZ active instance running 24/7.
+
+| AWS Service | Configuration | Monthly Cost (USD) |
+|---|---|---|
+| **Amazon EC2** (Backend) | 2× `t3.micro` in ASG (Private Subnet) | ~$15.18 |
+| **Amazon RDS PostgreSQL** | `db.t3.micro` Multi-AZ, 20GB GP3 storage | ~$28.62 |
+| **Application Load Balancer** | 1 ALB (~10 LCU/month) | ~$10.08 |
+| **Amazon CloudFront** | 10GB data transfer out, 1M requests | ~$1.20 |
+| **Amazon S3** | Frontend static assets + DB backups ~5GB | ~$0.23 |
+| **NAT Gateway** | 1 NAT GW + ~10GB data processed | ~$5.40 |
+| **AWS Secrets Manager** | 3 secrets × $0.40 | ~$1.20 |
+| **Amazon CloudWatch** | Custom metrics + 5GB logs + 3 Alarms | ~$3.50 |
+| **AWS WAF** | 1 Web ACL + 10M requests | ~$6.00 |
+| **AWS KMS** | 1 CMK key + 10K API calls | ~$1.03 |
+| **Total Estimated** | | **~$72.44 / month** |
+
+> **💡 AWS Free Tier Note:** For lab and internship demo purposes, most services fall within AWS Free Tier limits (EC2 `t2.micro` 750hrs/month, S3 5GB, CloudWatch 5GB logs, 10 alarms). Estimated real cost for a non-Free Tier production account is approximately **$72.44/month**.
+
+- **Cost Controls:** CloudWatch Billing Alarms send immediate email notification when estimated charges exceed **$5 USD**, and all non-persistent resources are deleted after project evaluation (FinOps Best Practices).
+
+
 
 ---
 

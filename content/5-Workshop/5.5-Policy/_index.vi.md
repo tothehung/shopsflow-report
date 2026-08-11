@@ -134,3 +134,21 @@ aws s3 ls s3://shopsflow-db-backups-<your-account-id>/backups/ --human-readable
   2. CloudWatch Alarm `shopsflow-asg-high-cpu` chuyển trạng thái `OK` → `ALARM`, hệ thống tự động gửi email cảnh báo qua SNS Topic.
   3. **Auto Scaling Group** phát hiện quá tải → Kích hoạt scale-out → Tự động khởi tạo máy chủ EC2 thứ 3.
   4. Máy chủ thứ 3 tự động được đăng ký (Register) vào Target Group `shopsflow-tg` của ALB để chia tải. Sau khi hết 300 giây stress, hệ thống tự động scale-in giảm về 2 instances.
+
+---
+
+### 5. Xử lý lỗi thường gặp (Troubleshooting)
+
+Bảng tổng hợp các lỗi phổ biến nhất khi triển khai hệ thống Shopsflow trên AWS, nguyên nhân và cách khắc phục:
+
+| # | Hiện tượng | Nguyên nhân | Cách khắc phục |
+|---|---|---|---|
+| 1 | **EC2 không pull được Docker image từ ECR** | IAM Role của EC2 thiếu quyền `ecr:GetAuthorizationToken` hoặc `ecr:BatchGetImage` | Gắn policy `AmazonEC2ContainerRegistryReadOnly` vào `ShopsflowEC2Role` |
+| 2 | **Spring Boot không khởi động được: "Connection refused" đến RDS** | Security Group của EC2 chưa mở outbound đến RDS SG trên port 5432, hoặc RDS ở subnet group sai | Kiểm tra `shopsflow-ec2-sg` có outbound rule đến `shopsflow-rds-sg:5432`; xác nhận RDS subnet group đúng VPC |
+| 3 | **Secrets Manager: lỗi `AccessDeniedException` khi gọi `GetSecretValue`** | IAM Role của EC2 thiếu quyền `secretsmanager:GetSecretValue` hoặc `kms:Decrypt` cho CMK | Thêm inline policy `secretsmanager:GetSecretValue` + `kms:Decrypt` vào `ShopsflowEC2Role` |
+| 4 | **CloudFront trả về 403 Forbidden cho request `/api/*`** | CloudFront Cache Behavior chưa cấu hình forward đến ALB origin, hoặc WAF Web ACL đang block | Kiểm tra Behavior `/api/*` dùng ALB origin; xem WAF rule logs trên CloudWatch |
+| 5 | **ALB Target Group báo instances "Unhealthy"** | User Data script thất bại (Docker chưa chạy), hoặc Health Check path `/actuator/health` không trả về 2xx | SSH vào EC2 → `sudo docker ps` kiểm tra container; xem Spring Boot logs |
+| 6 | **S3 Static Website trả về 403 với các route của React SPA** | S3 bucket policy chưa public, CloudFront OAC chưa cấu hình, React router path bị từ chối | Thêm Custom Error Response `403 → index.html` trong CloudFront; kiểm tra OAC S3 bucket policy |
+| 7 | **RDS Multi-AZ failover: Connection pool ứng dụng bị mất kết nối** | HikariCP cache endpoint DNS cũ, JVM không đọc TTL DNS đúng | Đặt `spring.datasource.hikari.connection-timeout=30000` và `maximumPoolSize=10`; dùng RDS Proxy để failover trong suốt |
+| 8 | **NAT Gateway: EC2 trong private subnet không ra được Internet** | Route table của private subnet thiếu route `0.0.0.0/0 → NAT Gateway` | Vào **VPC → Route Tables → shopsflow-private-rt** → Thêm route `0.0.0.0/0 → nat-xxxxxxxx` |
+

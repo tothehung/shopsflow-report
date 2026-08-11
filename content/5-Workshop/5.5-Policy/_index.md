@@ -134,3 +134,21 @@ aws s3 ls s3://shopsflow-db-backups-<your-account-id>/backups/ --human-readable
   2. CloudWatch Alarm `shopsflow-asg-high-cpu` transitions from `OK` to `ALARM`, triggering an email alert via SNS.
   3. The **Auto Scaling Group** detects the breach → Triggers scale-out → Automatically provisions a 3rd EC2 instance.
   4. The 3rd instance automatically registers with the ALB Target Group `shopsflow-tg` to share traffic. Once the 300s stress period ends, the system automatically scales back in to 2 instances.
+
+---
+
+### 5. Troubleshooting Common Issues
+
+The following table covers the most frequently encountered errors when deploying the Shopsflow system on AWS, along with their root causes and recommended fixes.
+
+| # | Symptom | Root Cause | Fix |
+|---|---|---|---|
+| 1 | **EC2 cannot pull Docker image from ECR** | EC2 IAM Role missing `ecr:GetAuthorizationToken` or `ecr:BatchGetImage` permission | Attach `AmazonEC2ContainerRegistryReadOnly` policy to `ShopsflowEC2Role` |
+| 2 | **Spring Boot fails to start: "Connection refused" to RDS** | EC2 Security Group does not allow outbound to RDS SG on port 5432, or RDS is in a different subnet group | Verify `shopsflow-ec2-sg` has outbound rule to `shopsflow-rds-sg:5432`; confirm RDS subnet group matches VPC |
+| 3 | **Secrets Manager: `AccessDeniedException` on `GetSecretValue`** | EC2 IAM Role missing `secretsmanager:GetSecretValue` and/or `kms:Decrypt` permission for the KMS CMK | Add inline policy with `secretsmanager:GetSecretValue` + `kms:Decrypt` to `ShopsflowEC2Role` |
+| 4 | **CloudFront returns 403 Forbidden for `/api/*` requests** | CloudFront Cache Behavior missing forward to ALB origin; or WAF Web ACL blocking rule firing | Check CloudFront Behavior for `/api/*` uses ALB origin; review WAF rule logs in CloudWatch |
+| 5 | **ALB Target Group shows instances as "Unhealthy"** | EC2 User Data script failed (Docker not running), or Health Check path `/actuator/health` returning non-2xx | SSH into EC2 → `sudo docker ps` to verify containers running; check Spring Boot logs |
+| 6 | **S3 Static Website returns 403 for React SPA routes** | S3 bucket policy not public, or CloudFront OAC not configured; React router paths returning 403 | Add `403 → index.html` Custom Error Response in CloudFront; verify OAC S3 bucket policy |
+| 7 | **RDS Multi-AZ failover: application connection pool drops** | Connection pool (HikariCP) caches old DB endpoint DNS; DNS TTL not respected by JVM | Set `spring.datasource.hikari.connection-timeout=30000` and `maximumPoolSize=10`; use RDS Proxy for transparent failover |
+| 8 | **NAT Gateway: EC2 in private subnet cannot reach internet** | Route table for private subnet missing `0.0.0.0/0 → NAT Gateway` route | Go to **VPC → Route Tables → shopsflow-private-rt** → Add route `0.0.0.0/0 → nat-xxxxxxxx` |
+
